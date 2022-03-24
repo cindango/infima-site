@@ -1,124 +1,111 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import logo from './InfimaLogo_Thin.svg';
+	export let document;
+	let y;
 </script>
 
-<header>
-	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a>
-	</div>
+<svelte:window bind:scrollY={y}/>
 
-	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.url.pathname === '/about'}>
-				<a sveltekit:prefetch href="/about">About</a>
-			</li>
-			<li class:active={$page.url.pathname === '/todos'}>
-				<a sveltekit:prefetch href="/todos">Todos</a>
-			</li>
-		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
-	</nav>
+<header class={y > 200 ? "nav-s" : ""}>
+	<div class="inner">
 
-	<div class="corner">
-		<!-- TODO put something else here? github link? -->
+		<nav>
+			<ul>
+				<li>
+					<a href="/">
+						<img class="i-logo" src={logo} alt="Infima" />
+					</a>
+				</li>
+			</ul>
+			<ul class="links">
+				<li>
+					<a>Products</a>
+				</li>
+				<li>
+					<a>Solutions</a>
+				</li>
+				<li>
+					<a href="/insights">Insights</a>
+				</li>
+				<li>
+					<a>Company</a>
+				</li>
+				<li>
+					<a>Sign In</a>
+				</li>
+			</ul>
+		</nav>
+
 	</div>
 </header>
 
 <style>
 	header {
 		display: flex;
-		justify-content: space-between;
-	}
-
-	.corner {
-		width: 3em;
-		height: 3em;
-	}
-
-	.corner a {
-		display: flex;
-		align-items: center;
 		justify-content: center;
+		position: fixed;
 		width: 100%;
-		height: 100%;
+		z-index: 99;
+		transition-property: background-color, backdrop-filter;
+		transition: background-color 2s ease, backdrop-filter 3s ease;
 	}
-
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
+	header.nav-s {
+		background-color: rgba(var(--background-color-rgb), .85);
+    backdrop-filter: saturate(180%) blur(20px);
+	}
+	.i-logo {
+		opacity: 1;
+		transition: all 1s linear;
+	}
+	header.nav-s .i-logo {
+		opacity: .8;
+	}
+	.inner {
+		width: 100%;
+		max-width: 1600px;
+		padding: 1rem 1.5rem;
 	}
 
 	nav {
 		display: flex;
-		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		justify-content: space-between;
 	}
 
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
+	ul.links {
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
+    justify-content: end;
+    gap: 30px;
 	}
 
 	li {
 		position: relative;
 		height: 100%;
+		line-height: 100%;
 	}
 
-	li.active::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--accent-color);
+	header.nav-s nav a {
+		opacity: .7;
 	}
 
 	nav a {
-		display: flex;
 		height: 100%;
-		align-items: center;
-		padding: 0 1em;
 		color: var(--heading-color);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
+		font-weight: 400;
+		font-size: 1rem;
+		letter-spacing: 0.04em;
 		text-decoration: none;
-		transition: color 0.2s linear;
+		transition: all 0.2s linear;
+		text-transform: lowercase;
 	}
 
-	a:hover {
-		color: var(--accent-color);
+	.nav-s a:hover {
+		opacity: 1;
+	}
+
+	@media (min-width:720px) {
+		.inner {
+			padding: 1.5rem 2rem;
+		}
 	}
 </style>
