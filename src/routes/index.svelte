@@ -131,7 +131,8 @@
 	.box.solution {
 		border: 0;
 		background-size: cover;
-		min-height: 450px;
+		min-height: 375px;
+		padding-bottom: 5rem;
 	}
 	.box.solution .icon {
 		height: 60px;
@@ -145,6 +146,11 @@
 		}
 		#splash p {
 			font-size: 1.5rem;
+		}
+		.box.solution {
+			border: 0;
+			background-size: cover;
+			min-height: 450px;
 		}
 	}
 
