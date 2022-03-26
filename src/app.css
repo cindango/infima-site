@@ -194,7 +194,6 @@ button:focus:not(:focus-visible) {
 	.button.primary-btn {
 		border: 1px solid;
 		padding: 12px 20px 14px;
-		margin: 20px 0;
 		font-size: 1.15rem;
 	}
 	.section-head label h2 {

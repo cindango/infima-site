@@ -26,7 +26,7 @@
 					<a>Solutions</a>
 				</li>
 				<li>
-					<a href="/insights">Insights</a>
+					<a sveltekit:prefetch href="/insights">Insights</a>
 				</li>
 				<li>
 					<a>Company</a>

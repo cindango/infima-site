@@ -24,9 +24,8 @@
 <script>
 	import { onMount } from "svelte";
 	import * as prismicH from '@prismicio/helpers';
+	import { fade } from 'svelte/transition';
 	export let blogs;
-
-
 </script>
 
 <svelte:head>
@@ -34,7 +33,7 @@
 </svelte:head>
 
 {#await prismicQuery}
-  <p style="height: 100vh; display: flex; align-items: center;">Loading...</p>
+  <div id="loading"></div>
 {:then document}
 	<section id="splash" style="background-image: url('{document.data.header_image.url}&q=100');">
 		<div class="container">
@@ -135,6 +134,10 @@
 {/await}
 
 <style>
+	#loading {
+		height: 96vh;
+		width: 100%;
+	}
 	#splash {
 		height: 96vh;
 		min-height: 700px;
@@ -142,6 +145,7 @@
 		align-items: center;
 		background-size: cover;
 		line-height: 1.2;
+		background-color: #9776a6;
 	}
 	#splash .container {
 		display: flex;
