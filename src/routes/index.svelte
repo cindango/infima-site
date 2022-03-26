@@ -1,10 +1,14 @@
 <script context="module">
 	export const prerender = true;
 
+	import createClient from '$lib/prismic';
 	import PrismicDom from 'prismic-dom';
 	import TextButton from './../lib/buttons/TextButton.svelte';
 	import RequestDemo from './../lib/buttons/RequestDemo.svelte';
 	import InsightsItem from './../lib/content/InsightsItem.svelte';
+
+	const client = createClient()
+  const prismicQuery = client.getSingle('homepage', 'homepage');
 
 	export async function load({ fetch }) {
       const [{ blogs }] = await Promise.all([fetch('/data.json').then((r) => r.json())]);
@@ -19,12 +23,10 @@
 
 <script>
 	import { onMount } from "svelte";
-	import createClient from '$lib/prismic';
 	import * as prismicH from '@prismicio/helpers';
 	export let blogs;
 
-	const client = createClient()
-  const prismicQuery = client.getSingle('homepage', 'homepage');
+
 </script>
 
 <svelte:head>
