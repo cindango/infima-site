@@ -1,5 +1,6 @@
 <script context="module">
 	export const prerender = true;
+
 	import PrismicDom from 'prismic-dom';
 	import TextButton from './../lib/buttons/TextButton.svelte';
 	import RequestDemo from './../lib/buttons/RequestDemo.svelte';
@@ -18,40 +19,30 @@
 
 <script>
 	import { onMount } from "svelte";
+	import createClient from '$lib/prismic';
 	import * as prismicH from '@prismicio/helpers';
-	let document;
 	export let blogs;
-	console.log(blogs)
 
-	const api = "https://infima.cdn.prismic.io/api/v2"
-  const endpoint = "https://infima.cdn.prismic.io/api/v2/documents/search?ref=";
-  let posts = [];
-  onMount(async function () {
-    const api_response = await fetch(api);
-    let master_ref = await api_response.json();
-    master_ref = master_ref.refs[0].ref;
-    const response = await fetch(endpoint + master_ref + "&q=[[at(my.homepage.uid,\"homepage\")]]");
-    const data = await response.json();
-    posts = data.results;
-  });
-
+	const client = createClient()
+  const prismicQuery = client.getSingle('homepage', 'homepage');
 </script>
 
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
 
-{#each posts as homepage}
-
-	<section id="splash" style="background-image: url('{homepage.data.header_image.url}&q=100');">
+{#await prismicQuery}
+  <p style="height: 100vh; display: flex; align-items: center;">Loading...</p>
+{:then document}
+	<section id="splash" style="background-image: url('{document.data.header_image.url}&q=100');">
 		<div class="container">
-			<div class="lg:w-2/3">{@html prismicH.asHTML(homepage.data.heading)}</div>
-			<p>{@html PrismicDom.RichText.asHtml(homepage.data.tagline)}</p>
+			<div class="lg:w-2/3">{@html prismicH.asHTML(document.data.heading)}</div>
+			<p>{@html PrismicDom.RichText.asHtml(document.data.tagline)}</p>
 			<RequestDemo />
 		</div>
 	</section>
 
-	{#each homepage.data.body as slice}
+	{#each document.data.body as slice}
 
 		{#if slice.slice_type === "products"}
 
@@ -123,20 +114,23 @@
 
 	{/each}
 
-{/each}
 
 	<section class="container">
 		<div class="section-head">
 			<label><h2>Featured Insights</h2></label>
 			<div class="grid lg:grid-cols-3 gap-8 w-full">
-		    {#each blogs.items as post}
+				{#each blogs.items as post}
 					{#if post.fields.featured === true}
-		      	<InsightsItem post={post} type={post.sys.contentType.sys.id} />
+						<InsightsItem post={post} type={post.sys.contentType.sys.id} />
 					{/if}
-		    {/each}
-		  </div>
+				{/each}
+			</div>
 		</div>
 	</section>
+{:catch error}
+  <p>Something went wrong:</p>
+  <pre>{error.message}</pre>
+{/await}
 
 <style>
 	#splash {

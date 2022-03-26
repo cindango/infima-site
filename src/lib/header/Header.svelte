@@ -13,7 +13,7 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="/">
+					<a sveltekit:prefetch href="/">
 						<img class="i-logo" src={logo} alt="Infima" />
 					</a>
 				</li>

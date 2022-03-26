@@ -1,28 +1,18 @@
-<script context="module">
-    export async function load({ fetch }) {
-        const [{ blogs }] = await Promise.all([fetch('/data.json').then((r) => r.json())]);
-        return {
-            props: {
-                blogs
-            }
-        };
-    }
-
-</script>
-
 <script>
-    export let blogs;
-    console.log(blogs)
+  import createClient from '$lib/prismic' // Update the path
+  import * as prismicH from "@prismicio/helpers"
+
+  const client = createClient()
+  const prismicQuery = client.getSingle('homepage', 'homepage')
 </script>
 
-<div class="row">
-    {#each blogs.items as post}
-        <div class="column">
-            {post.fields.title}
-        </div>
-    {/each}
+<h1>Prismic Svelte App</h1>
 
-</div>
-
-<style>
-</style>
+{#await prismicQuery}
+  <p>Loading...</p>
+{:then document}
+  {@html prismicH.asHTML(document.data.heading)}
+{:catch error}
+  <p>Something went wrong:</p>
+  <pre>{error.message}</pre>
+{/await}
