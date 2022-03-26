@@ -15,20 +15,16 @@
 
 <script>
     export let blogs;
-    console.log(blogs);
 </script>
 
 <section class="container">
   <h1>insights</h1>
   <div class="grid lg:grid-cols-3 gap-8 w-full">
     {#each blogs.items as post}
-      <InsightsItem post={post} type={post.sys.contentType.sys.id} />
+      <InsightsItem post={post} />
     {/each}
   </div>
 </section>
 
 <style>
-  h1 {
-    padding-bottom: 6vh;
-  }
 </style>

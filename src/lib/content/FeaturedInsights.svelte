@@ -1,6 +1,6 @@
 <script context="module">
-  import TextButton from './../../lib/buttons/TextButton.svelte';
-  import InsightsItem from './../../lib/content/InsightsItem.svelte';
+  import TextButton from './../buttons/TextButton.svelte';
+  import InsightsItem from './InsightsItem.svelte';
 
   export async function load({ fetch }) {
       const [{ blogs }] = await Promise.all([fetch('/insights/data.json').then((r) => r.json())]);
@@ -15,20 +15,13 @@
 
 <script>
     export let blogs;
-    console.log(blogs);
 </script>
 
 <section class="container">
-  <h1>insights</h1>
   <div class="grid lg:grid-cols-3 gap-8 w-full">
-    {#each blogs.items as post}
-      <InsightsItem post={post} type={post.sys.contentType.sys.id} />
-    {/each}
+
   </div>
 </section>
 
 <style>
-  h1 {
-    padding-bottom: 6vh;
-  }
 </style>

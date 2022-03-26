@@ -16,9 +16,9 @@
 </script>
 
 <div class="row">
-    {#each blogs.items as blog}
+    {#each blogs.items as post}
         <div class="column">
-            {blog.fields.name}
+            {post.fields.title}
         </div>
     {/each}
 

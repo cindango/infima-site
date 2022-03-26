@@ -8,7 +8,7 @@
 	export let document;
 </script>
 
-<section id="heading" style="background-image: url('{document.data.header_image.url}&q=100');">
+<section id="heading" style="background-image: url('{document.data.header_image.url}');">
 	<div id="gradient" />
   <div class="container">
     <div class="lg:w-full xl:w-1/2">

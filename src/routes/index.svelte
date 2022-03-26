@@ -3,98 +3,140 @@
 	import PrismicDom from 'prismic-dom';
 	import TextButton from './../lib/buttons/TextButton.svelte';
 	import RequestDemo from './../lib/buttons/RequestDemo.svelte';
+	import InsightsItem from './../lib/content/InsightsItem.svelte';
+
+	export async function load({ fetch }) {
+      const [{ blogs }] = await Promise.all([fetch('/data.json').then((r) => r.json())]);
+      return {
+          props: {
+              blogs
+          }
+      };
+  }
+
 </script>
 
 <script>
+	import { onMount } from "svelte";
 	import * as prismicH from '@prismicio/helpers';
-	export let document;
+	let document;
+	export let blogs;
+	console.log(blogs)
+
+	const api = "https://infima.cdn.prismic.io/api/v2"
+  const endpoint = "https://infima.cdn.prismic.io/api/v2/documents/search?ref=";
+  let posts = [];
+  onMount(async function () {
+    const api_response = await fetch(api);
+    let master_ref = await api_response.json();
+    master_ref = master_ref.refs[0].ref;
+    const response = await fetch(endpoint + master_ref + "&q=[[at(my.homepage.uid,\"homepage\")]]");
+    const data = await response.json();
+    posts = data.results;
+  });
+
 </script>
 
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
 
-<section id="splash" style="background-image: url('{document.data.header_image.url}&q=100');">
-	<div class="container">
-		<div class="lg:w-2/3">{@html prismicH.asHTML(document.data.heading)}</div>
-		<p>{@html PrismicDom.RichText.asHtml(document.data.tagline)}</p>
-		<RequestDemo />
-	</div>
-</section>
+{#each posts as homepage}
 
-{#each document.data.body as slice}
-
-	{#if slice.slice_type === "products"}
-
-		<section class="container products">
-
-			<div class="section-head">
-				<label>{@html prismicH.asHTML(slice.primary.title)}</label>
-				<h3 class="lg:w-2/3">{slice.primary.description}</h3>
-			</div>
-
-			<div class="grid lg:grid-cols-3 gap-8 w-full">
-
-				{#each slice.items as product}
-					<a class="box" href="/{product.link.type}s/{product.link.uid}">
-						<img class="icon" src="{product.icon.url}" />
-						<h4>{product.name}</h4>
-						<span class="sm:w-2/3 lg:w-full">{@html PrismicDom.RichText.asHtml(product.description)}</span>
-						<TextButton />
-					</a>
-				{/each}
-
-			</div>
-
-		</section>
-
-	{:else if slice.slice_type === "solutions"}
-
-		<section class="container">
-
-			<div class="section-head">
-				<label>{@html prismicH.asHTML(slice.primary.title)}</label>
-				{#if slice.primary.description > 0}
-					<h3>{@html PrismicDom.RichText.asHtml(slice.primary.description)}</h3>
-				{/if}
-			</div>
-
-			<div class="grid md:grid-cols-2 gap-8 w-full">
-
-				{#each slice.items as solution}
-					<a class="box solution" href="/{solution.link.type}s/{solution.link.uid}" style="background-image: url({solution.background.url});">
-						<img class="icon" src="{solution.icon.url}" />
-						<h4>{solution.name}</h4>
-						<span class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(solution.description)}</span>
-						<TextButton />
-					</a>
-				{/each}
-
-			</div>
-
-		</section>
-
-	{:else}
-
-	<section>
-
+	<section id="splash" style="background-image: url('{homepage.data.header_image.url}&q=100');">
 		<div class="container">
-
-			{#each slice.items as callout}
-				<div class="section-head callout">
-					<label>{@html prismicH.asHTML(callout.title)}</label>
-					<h3 class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(callout.description)}</h3>
-					<a href="/{callout.link.uid}" class="button primary-btn">{callout.link_text} <img src="/RightArrow.svg" /></a>
-				</div>
-			{/each}
-
+			<div class="lg:w-2/3">{@html prismicH.asHTML(homepage.data.heading)}</div>
+			<p>{@html PrismicDom.RichText.asHtml(homepage.data.tagline)}</p>
+			<RequestDemo />
 		</div>
-
 	</section>
 
-	{/if}
+	{#each homepage.data.body as slice}
+
+		{#if slice.slice_type === "products"}
+
+			<section class="container products">
+
+				<div class="section-head">
+					<label>{@html prismicH.asHTML(slice.primary.title)}</label>
+					<h3 class="lg:w-2/3">{slice.primary.description}</h3>
+				</div>
+
+				<div class="grid lg:grid-cols-3 gap-8 w-full">
+
+					{#each slice.items as product}
+						<a class="box" href="/{product.link.type}s/{product.link.uid}">
+							<img class="icon" src="{product.icon.url}" />
+							<h4>{product.name}</h4>
+							<span class="sm:w-2/3 lg:w-full">{@html PrismicDom.RichText.asHtml(product.description)}</span>
+							<TextButton />
+						</a>
+					{/each}
+
+				</div>
+
+			</section>
+
+		{:else if slice.slice_type === "solutions"}
+
+			<section class="container">
+
+				<div class="section-head">
+					<label>{@html prismicH.asHTML(slice.primary.title)}</label>
+					{#if slice.primary.description > 0}
+						<h3>{@html PrismicDom.RichText.asHtml(slice.primary.description)}</h3>
+					{/if}
+				</div>
+
+				<div class="grid md:grid-cols-2 gap-8 w-full">
+
+					{#each slice.items as solution}
+						<a class="box solution" href="/{solution.link.type}s/{solution.link.uid}" style="background-image: url({solution.background.url});">
+							<img class="icon" src="{solution.icon.url}" />
+							<h4>{solution.name}</h4>
+							<span class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(solution.description)}</span>
+							<TextButton />
+						</a>
+					{/each}
+
+				</div>
+
+			</section>
+
+		{:else}
+
+			{#each slice.items as callout}
+
+				<section class="container callout">
+
+					<div class="section-head">
+						<label>{@html prismicH.asHTML(callout.title)}</label>
+						<h3 class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(callout.description)}</h3>
+						<a href="/{callout.link.uid}" class="button primary-btn">{callout.link_text} <img src="/RightArrow.svg" /></a>
+					</div>
+
+				</section>
+
+			{/each}
+
+		{/if}
+
+	{/each}
 
 {/each}
+
+	<section class="container">
+		<div class="section-head">
+			<label><h2>Featured Insights</h2></label>
+			<div class="grid lg:grid-cols-3 gap-8 w-full">
+		    {#each blogs.items as post}
+					{#if post.fields.featured === true}
+		      	<InsightsItem post={post} type={post.sys.contentType.sys.id} />
+					{/if}
+		    {/each}
+		  </div>
+		</div>
+	</section>
 
 <style>
 	#splash {
@@ -137,8 +179,14 @@
 	.box.solution .icon {
 		height: 60px;
 	}
+	.callout .section-head {
+		padding-bottom: 0;
+	}
 	.callout h3 {
 		max-width: 1090px;
+	}
+	.callout a {
+		width: fit-content;
 	}
 	@media (min-width: 720px) {
 		:global(#splash h1) {

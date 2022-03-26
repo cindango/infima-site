@@ -47,12 +47,14 @@
 		position: fixed;
 		width: 100%;
 		z-index: 99;
-		transition-property: background-color, backdrop-filter;
-		transition: background-color 2s ease, backdrop-filter 3s ease;
+		transition: background-color .5s ease, backdrop-filter .5s ease;
+
 	}
 	header.nav-s {
 		background-color: rgba(var(--background-color-rgb), .85);
     backdrop-filter: saturate(180%) blur(20px);
+		transition-property: background-color, backdrop-filter;
+		transition: background-color 2s ease, backdrop-filter 3s ease;
 	}
 	.i-logo {
 		opacity: 1;

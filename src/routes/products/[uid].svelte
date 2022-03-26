@@ -43,7 +43,7 @@
                 <h4>{product.title}</h4>
                 <p>{@html PrismicDom.RichText.asHtml(product.description)}</p>
               </div>
-              <img class="lg:w-2/3 mt-10 lg:mt-0 product-image" src="{product.image.url}&q=100" />
+              <img class="lg:w-2/3 mt-10 lg:mt-0 product-image" src="{product.image.url}" />
             </div>
           {/each}
         </div>
