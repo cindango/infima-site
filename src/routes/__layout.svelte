@@ -2,6 +2,7 @@
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
 	import logo from './../lib/header/InfimaLogo_Thin.svg';
+	import Time from "svelte-time";
 </script>
 
 <Header />
@@ -17,7 +18,7 @@
 			<a class="button primary-btn">Talk to Us</a>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container footer-links">
 		<div class="grid sm:grid-cols-4 w-full gap-8">
 			<div class="info">
 				<strong><img class="i-logo" src={logo} alt="Infima" /></strong>
@@ -65,6 +66,9 @@
 				</ul>
 			</div>
 		</div>
+		<div class="copywright">
+			<div>© <Time timestamp="{new Date()}" format="YYYY" /> Infima. All Rights Reserved.</div><div><a>Terms of Use</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a>Privacy</a></div>
+		</div>
 </footer>
 
 <style>
@@ -103,6 +107,10 @@
 		font-size: 1rem;
 	}
 
+	footer .footer-links {
+		gap: 8vh;
+	}
+
 	footer .info {
 		display: flex;
     flex-direction: column;
@@ -119,6 +127,31 @@
 		font-size: 1rem;
 		padding: .2rem 0;
 		letter-spacing: .03rem;
+	}
+
+	footer .copywright {
+		text-transform: initial;
+		font-size: .9rem;
+		border-top: 1px solid rgba(255,255,255,.2);
+		padding-top: 20px;
+		color: rgba(255,255,255,.5);
+		display: flex;
+		font-weight: 300;
+	}
+
+	footer .copywright div:first-of-type {
+		border-right: 1px solid rgba(255,255,255,.2);
+		padding-right: 15px;
+		margin-right: 15px;
+	}
+
+	footer .copywright a {
+		color: rgba(255,255,255,.5);
+		text-decoration: none;
+	}
+
+	footer .copywright a:hover {
+		color: rgba(255,255,255,1);
 	}
 
 	.button.primary-btn:hover {

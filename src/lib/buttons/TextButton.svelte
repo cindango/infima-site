@@ -6,6 +6,6 @@ export let label = 'Learn More';
 <style>
 :global(.box .button.text-btn) {
   position: absolute;
-  bottom: 1.75rem;
+  bottom: 2rem;
 }
 </style>
