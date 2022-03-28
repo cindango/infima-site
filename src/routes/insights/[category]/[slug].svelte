@@ -56,7 +56,7 @@
 
 				<h1>{insights_entry.fields.title}</h1>
 
-				<div class="w-full lg:grid lg:grid-cols-3 flex flex-col gap-4lg:gap-2 contributors">
+				<div class="w-full lg:grid lg:grid-cols-3 flex flex-col gap-4 lg:gap-2 contributors">
 					{#each insights_entry.fields.contributors as contributor}
 						<div>
 							<p class="c-name">{contributor.fields.name}</p>
@@ -85,6 +85,9 @@
 	.heading {
 		margin: 2rem 0;
 		gap: 2rem;
+	}
+	.insights-detail .heading h1 {
+		font-size: 2rem;
 	}
 	.heading .meow {
 		color: #fff;
@@ -141,7 +144,7 @@
 		.container {
 			padding: 8rem 2rem;
 		}
-		.heading h1 {
+		.insights-detail .heading h1 {
 			font-size: 3.25rem;
 		}
 		:global(.insights-detail .content) {

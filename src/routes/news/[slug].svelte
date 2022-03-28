@@ -31,7 +31,7 @@
 <section class="container">
   <div class="heading">
 		<span class="meow">{news_entry.fields.category}</span><p class="date"><Time timestamp="{news_entry.sys.createdAt}" format="MM.DD.YYYY" /></p>
-  	<h1 class="max-w-6xl">{news_entry.fields.title}</h1>
+  	<h1 class="max-w-7xl">{news_entry.fields.title}</h1>
   </div>
 	<div class="max-w-3xl mx-auto">
 		<Body content={news_entry.fields.content} />

@@ -26,7 +26,7 @@
 		{#if slice.slice_type === "main_product_image"}
 
       <div class="container">
-        <img class="product-featured-image lg:w-5/6" src="{slice.primary.image.url}&q=100" />
+        <img class="product-featured-image w-full lg:w-5/6" src="{slice.primary.image.url}&q=100" />
       </div>
 
     {/if}

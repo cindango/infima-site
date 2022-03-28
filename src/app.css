@@ -28,7 +28,7 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	background-color: var(--background-color);
-	font-size: 1.15rem;
+	font-size: 1rem;
 	color: var(--text-color);
 }
 
@@ -251,8 +251,8 @@ button:focus:not(:focus-visible) {
 }
 .button.primary-btn, .hs-button.primary {
 	border-radius: 2px;
+	margin-top: 20px;
 	padding: 10px 20px 12px;
-	margin: 20px 0;
 	border: 1px solid;
 	gap: 10px;
 	transition: background 1s ease, border .25s ease;
@@ -313,6 +313,9 @@ button:focus:not(:focus-visible) {
 	h4 {
 		font-size: 1.9rem;
 	}
+	body {
+		font-size: 1.15rem;
+	}
 	.box {
 		padding: 2.25rem;
 		padding-bottom: 5rem;
@@ -321,7 +324,7 @@ button:focus:not(:focus-visible) {
 	.button.primary-btn {
 		border: 1px solid;
 		padding: 12px 20px 14px;
-		font-size: 1.15rem;
+		font-size: 1.1rem;
 	}
 	.button.text-btn {
     bottom: 2rem;
