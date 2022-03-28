@@ -103,8 +103,8 @@
 		padding-top: .5rem;
 		display: block;
 		font-weight: 500;
-		color: rgba(255,255,255,.5);
 		font-size: 1rem;
+		padding-bottom: .5rem;
 	}
 
 	footer .footer-links {
@@ -116,7 +116,7 @@
     flex-direction: column;
     justify-content: space-between;
 		text-transform: lowercase;
-		color: rgba(255,255,255,.6);
+		color: rgba(255,255,255,.5);
 	}
 
 	footer strong img {
@@ -127,6 +127,7 @@
 		font-size: 1rem;
 		padding: .2rem 0;
 		letter-spacing: .03rem;
+		font-weight: 300;
 	}
 
 	footer .copywright {
