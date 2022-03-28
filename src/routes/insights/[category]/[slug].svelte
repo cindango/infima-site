@@ -48,7 +48,7 @@
 </script>
 
 <section class="container insights-detail">
-  <div class="lg:flex lg:flex-row gap-16">
+  <div class="lg:flex lg:flex-row gap-8">
 		<div class="w-full lg:w-3/5">
 			<div class="heading flex flex-col items-start">
 
@@ -56,7 +56,7 @@
 
 				<h1>{insights_entry.fields.title}</h1>
 
-				<div class="w-full lg:grid lg:grid-cols-3 flex flex-col gap-4 lg:gap-2 contributors">
+				<div class="w-full lg:grid lg:grid-cols-3 flex flex-col gap-4lg:gap-2 contributors">
 					{#each insights_entry.fields.contributors as contributor}
 						<div>
 							<p class="c-name">{contributor.fields.name}</p>
@@ -125,6 +125,17 @@
     border-top: 1px solid rgba(255,255,255,.2);
     padding-top: 0.5rem;
 		margin-top: 3rem;
+	}
+	:global(#request .submitted-message) {
+		max-width: 500px;
+		margin: 0 auto 2rem;
+		background: rgba(255,255,255,.05);
+		padding: 2rem;
+	}
+	:global(#request .submitted-message p strong) {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		display: block;
 	}
 	@media (min-width:720px) {
 		.container {
