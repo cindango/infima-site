@@ -126,6 +126,9 @@
 	}
 
 	@media (min-width: 720px) {
+		footer .container {
+			padding: 8vh 2rem;
+		}
 		.button.primary-btn {
 	    padding: 12px 30px 13px;
 	    font-size: 1.15rem;
