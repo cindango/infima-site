@@ -2,7 +2,7 @@ import { client } from '$lib/contentfulClient';
 
 export async function get() {
     const blogs = await client.getEntries({
-        content_type: ['insights', 'news'],
+        'sys.contentType.sys.id[in]': 'insights,news',
         order: '-sys.createdAt'
     });
 

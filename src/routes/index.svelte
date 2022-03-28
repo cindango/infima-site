@@ -122,7 +122,7 @@
 			<div class="grid lg:grid-cols-3 gap-8 w-full">
 				{#each blogs.items as post}
 					{#if post.fields.featured === true}
-						<InsightsItem post={post} type={post.sys.contentType.sys.id} />
+						<InsightsItem post={post} category={post.fields.category} type={post.sys.contentType.sys.id} />
 					{/if}
 				{/each}
 			</div>

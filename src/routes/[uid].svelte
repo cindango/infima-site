@@ -1,6 +1,7 @@
 <script context="module">
 	export const prerender = true;
 	import PrismicDom from 'prismic-dom';
+	import TextButton from './../lib/buttons/TextButton.svelte';
 </script>
 
 <script>
@@ -132,7 +133,7 @@
     flex-direction: column;
   }
   @media (min-width: 720px) {
-		:global(#heading h1) {
+		#heading h1 {
 	    font-size: 5rem;
 		}
     #heading p {

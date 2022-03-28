@@ -3,6 +3,7 @@ import { client } from '$lib/contentfulClient';
 export async function get({ params }) {
     const insights_entry = await client.getEntries({
         'fields.slug': params.slug,
+        'fields.category': params.category,
         content_type: 'insights'
     });
 

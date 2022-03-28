@@ -3,14 +3,15 @@
 </script>
 <script>
   export let post;
+  export let category;
   export let type;
   export let slug;
 </script>
 
-<a class="box" href="/{type}/{post.fields.slug}">
+<a class="box" href="/{type}/{type === 'insights' ? category + '/' : ''}{post.fields.slug}">
   <span class="meow">
     {#if post.fields.category}
-      {post.fields.category}
+      {post.fields.category.replace(/-/g, ' ')}
     {:else}
       Insights
     {/if}
