@@ -20,7 +20,7 @@
 	</div>
 </section>
 
-<section class="container">
+<section class="container solution-details">
 	{#each document.data.body as slice}
 
 		<div class="section-head">
@@ -59,6 +59,9 @@
 	}
 	section.container {
 		padding-top: 0;
+	}
+	.solution-details {
+		padding-bottom: 30vh;
 	}
 	.feature {
 		display: flex;

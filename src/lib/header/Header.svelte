@@ -143,7 +143,6 @@
 	}
 	.i-logo {
 		opacity: 1;
-		transition: all 1s linear;
 	}
 	header.nav-s .i-logo {
 		opacity: .8;
@@ -170,12 +169,12 @@
 	}
 
 	header.nav-s nav a {
-		opacity: .7;
+		color: rgba(255,255,255,.75);
 	}
 
 	nav a {
 		height: 100%;
-		color: var(--heading-color);
+		color: rgba(255,255,255,.85);
 		font-weight: 400;
 		font-size: 1rem;
 		letter-spacing: 0.04em;
@@ -184,8 +183,12 @@
 		text-transform: lowercase;
 	}
 
-	.nav-s a:hover {
-		opacity: 1;
+	nav li:hover > a, header.expanded:hover nav li.open a, header.expanded:hover nav ul > li > a:hover {
+		color: rgba(255,255,255,1);
+	}
+
+	header.expanded:hover nav ul > li > a {
+		color: rgba(255,255,255,.4);
 	}
 
 	@media (min-width:720px) {

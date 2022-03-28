@@ -136,6 +136,24 @@ input:focus {
 	border-color: #aaa;
 }
 
+select {
+	-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: unset;
+  -moz-appearance: unset;
+	background-image:
+    linear-gradient(45deg, transparent 50%, rgba(255,255,255,.8) 50%),
+    linear-gradient(135deg, rgba(255,255,255,.8) 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px);
+	background-size:
+    5px 5px,
+    5px 5px;
+	background-repeat: no-repeat;
+}
+
 #request fieldset, .hs-submit {
 	margin: 0 auto;
 }
@@ -185,7 +203,8 @@ input:focus {
 
 .hs-form-booleancheckbox-display {
 	display: flex;
-	align-items: center;
+	align-items: baseline;
+	line-height: 1.2;
 }
 
 #request .legal-consent-container .field.hs-form-field {

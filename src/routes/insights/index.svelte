@@ -110,7 +110,7 @@
     padding-bottom: .25rem;
   }
   select {
-    color: #222;
+    color: #fff;
   }
   @media (min-width:1024px) {
     h1 {
