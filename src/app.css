@@ -12,6 +12,7 @@
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--pure-white: #ffffff;
 	--primary-color: #B240E5;
+	--primary-color-link: #c780ff;
 	--secondary-color: #5F4BE2;
 	--tertiary-color: #edf0f8;
 	--accent-color: #ff3e00;
@@ -65,7 +66,7 @@ p {
 }
 
 a {
-	color: var(--primary-color);
+	color: var(--primary-color-link);
 	text-decoration: none;
 	cursor: pointer;
 }
