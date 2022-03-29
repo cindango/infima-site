@@ -28,7 +28,7 @@
     margin: 0 auto;
   }
   :global(.content p) {
-    margin: 1.5rem 0;
+    margin: 0 0 1.5rem;
     font-size: 1rem;
   }
   :global(.content blockquote) {

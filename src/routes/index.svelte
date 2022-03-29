@@ -83,7 +83,7 @@
 				<div class="grid md:grid-cols-2 gap-8 w-full">
 
 					{#each slice.items as solution}
-						<a class="box solution" href="/{solution.link.type}s/{solution.link.uid}" style="background-image: url({solution.background.url});">
+						<a class="box solution" href="/{solution.link.type}s/{solution.link.uid}" style="background-image: url({solution.background.url}&q=100);">
 							<img class="icon" src="{solution.icon.url}" />
 							<h4>{solution.name}</h4>
 							<span class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(solution.description)}</span>

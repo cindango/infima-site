@@ -15,7 +15,7 @@
 	<div class="container get-started">
 		<div>
 			<h2>Ready to get started?</h2>
-			<a class="button primary-btn">Talk to Us</a>
+			<a class="button primary-btn hover-pink">Talk to Us</a>
 		</div>
 	</div>
 	<div class="container footer-links">
@@ -33,36 +33,36 @@
 				<div>
 					<strong>Products</strong>
 					<ul>
-						<li>Infima Platform</li>
-						<li>Infima Libraries</li>
-						<li>Infima APIs</li>
+						<li><a>Infima Platform</a></li>
+						<li><a>Infima Libraries</a></li>
+						<li><a>Infima APIs</a></li>
 					</ul>
 				</div>
 				<div>
 					<strong>Solutions</strong>
 					<ul>
-						<li>Asset managers</li>
-						<li>Dealers</li>
+						<li><a>Asset managers</a></li>
+						<li><a>Dealers</a></li>
 					</ul>
 				</div>
 			</div>
 			<div>
 				<strong>Insights</strong>
 				<ul>
-					<li>News</li>
-					<li>Research Papers</li>
-					<li>Market Maps</li>
-					<li>White Papers</li>
+					<li><a>News</li>
+					<li><a>Research Papers</a></li>
+					<li><a>Market Maps</a></li>
+					<li><a>White Papers</a></li>
 				</ul>
 			</div>
 			<div>
 				<strong>About Us</strong>
 				<ul>
-					<li>Technology</li>
-					<li>Company</li>
-					<li>Contact</li>
-					<li>Developer</li>
-					<li>Sign In</li>
+					<li><a>Technology</a></li>
+					<li><a>Company</a></li>
+					<li><a>Contact</a></li>
+					<li><a>Developer</a></li>
+					<li><a>Sign In</a></li>
 				</ul>
 			</div>
 		</div>
@@ -90,7 +90,8 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		background: #403d49;
+		/*background: #5544a0;*/
+		background: #5945b3;
 		text-transform: lowercase;
 	}
 
@@ -128,6 +129,10 @@
 		padding: .2rem 0;
 		letter-spacing: .03rem;
 		font-weight: 300;
+	}
+
+	footer li a {
+		color: rgba(255,255,255,.8);
 	}
 
 	footer .copywright {

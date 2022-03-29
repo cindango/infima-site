@@ -50,9 +50,9 @@
 </script>
 
 <section class="container insights-detail">
-  <div class="lg:flex lg:flex-row gap-8">
-		<div class="w-full lg:w-3/5">
-			<div class="heading flex flex-col items-start">
+  <div class="lg:flex lg:flex-row gap-12 insights-frame">
+		<div class="w-full lg:w-2/3 flex flex-col gap-8">
+			<div class="heading flex flex-col gap-8 items-start">
 
 				<span class="meow">{insights_entry.fields.category.replace(/-/g, ' ')}</span>
 
@@ -74,7 +74,8 @@
 			<Body content={insights_entry.fields.content} />
 
 		</div>
-		<div class="w-full lg:w-2/5">
+		<div class="w-full lg:w-1/3">
+			<h4>Request Download</h4>
 			<div id="request"></div>
 			<div class="form-consent">
 			<p>Infima Technologies, Inc. is committed to protecting and respecting your privacy, and we’ll only use your personal information to administer your account and to provide the products and services you requested from us. From time to time, we would like to contact you about our products and services, as well as other content that may be of interest to you. If you consent to us contacting you for this purpose, please tick above to say how you would like us to contact you.</p>
@@ -86,9 +87,12 @@
 </section>
 
 <style>
-	.heading {
-		margin: 0 0 2rem;
-		gap: 2rem;
+	.insights-frame {
+		border: 1px solid rgba(255,255,255,.2);
+		border-left: 3px solid rgba(255,255,255,.8);
+		max-width: 1240px;
+		margin: 0 auto;
+		padding: 1rem;
 	}
 	.insights-detail .heading h1 {
 		font-size: 2rem;
@@ -125,12 +129,12 @@
 	}
 	h4 {
 		font-family: var(--font-condensed);
-    font-size: 1rem;
+    font-size: 1.1rem;
+		font-weight: 500;
     text-transform: uppercase;
     letter-spacing: .05rem;
-    border-top: 1px solid rgba(255,255,255,.2);
-    padding-top: 0.5rem;
-		margin-top: 3rem;
+		margin-top: .5rem;
+		margin-bottom: 1rem;
 	}
 	:global(#request .submitted-message) {
 		max-width: 500px;
@@ -144,6 +148,9 @@
 		display: block;
 	}
 	@media (min-width:720px) {
+		.insights-frame {
+			padding: 4rem;
+		}
 		.container {
 			padding: 8rem 2rem;
 		}
@@ -158,8 +165,7 @@
 			font-size: 1.15rem;
 		}
 		#request, .form-consent {
-			padding: 2rem;
-			padding-top: 0;
+			padding-bottom: 2rem;
 		}
 	}
 </style>

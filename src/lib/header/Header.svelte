@@ -94,9 +94,12 @@
 		transition: height .25s ease;
 		overflow: hidden;
 	}
+	.links > li > a {
+		padding-left: 8px;
+	}
 	.dropdown {
 		position: absolute;
-		margin: 2rem 0;
+		margin: 1.15rem 0;
 		opacity: 0;
 		transition: opacity .25s linear;
 		height: 0;
@@ -106,13 +109,19 @@
 		display: inline-block;
 		text-transform: unset;
 		margin: 5px 0;
-		text-transform: lowercase;
+		color: rgba(255,255,255,.8);
+		border-left: 1px solid rgba(255,255,255,0);
+		padding-left: 8px;
+	}
+	.dropdown li a:hover {
+		color: rgba(255,255,255,1);
+		border-left: 1px solid rgba(255,255,255,.8);
 	}
 	.links li.products.open {
-		height: 160px;
+		height: 130px;
 	}
 	.links li.solutions.open {
-		height: 130px;
+		height: 100px;
 	}
 	.open .dropdown {
 		opacity: 1;
@@ -174,21 +183,21 @@
 
 	nav a {
 		height: 100%;
-		color: rgba(255,255,255,.85);
+		color: rgba(255,255,255,.8);
 		font-weight: 400;
 		font-size: 1rem;
 		letter-spacing: 0.04em;
 		text-decoration: none;
-		transition: all 0.2s linear;
+		transition: color 0.25s linear;
 		text-transform: lowercase;
 	}
 
-	nav li:hover > a, header.expanded:hover nav li.open a, header.expanded:hover nav ul > li > a:hover {
+	nav li:hover > a, header.expanded:hover nav li.open > a, header.expanded:hover nav ul > li > a:hover {
 		color: rgba(255,255,255,1);
 	}
 
 	header.expanded:hover nav ul > li > a {
-		color: rgba(255,255,255,.4);
+		color: rgba(255,255,255,.35);
 	}
 
 	@media (min-width:720px) {
