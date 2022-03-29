@@ -28,6 +28,15 @@
 	import Body from './../../../lib/content/Body.svelte';
 	import { onMount } from 'svelte';
 
+	import TypeMate from 'typemate';
+
+	let heading;
+
+	onMount(() => {
+		const typeMateInstance = new TypeMate(heading, { selector: 'h1' });
+		typeMateInstance.apply();
+	});
+
 	if (insights_entry.fields.download) {
 		let downloadField = insights_entry.fields.download;
 		let downloadAllow = insights_entry.fields.allowDownload;
@@ -52,7 +61,7 @@
 <section class="container insights-detail">
   <div class="lg:flex lg:flex-row gap-12 insights-frame">
 		<div class="w-full lg:w-2/3 flex flex-col gap-8">
-			<div class="heading flex flex-col gap-8 items-start">
+			<div bind:this={heading} class="heading flex flex-col gap-8 items-start">
 
 				<span class="meow">{insights_entry.fields.category.replace(/-/g, ' ')}</span>
 

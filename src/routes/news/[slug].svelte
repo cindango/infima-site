@@ -24,12 +24,21 @@
 
 <script>
 	export let news_entry;
+	import { onMount } from 'svelte';
 	import Time from "svelte-time";
 	import Body from './../../lib/content/Body.svelte';
+	import TypeMate from 'typemate';
+
+	let heading;
+
+	onMount(() => {
+		const typeMateInstance = new TypeMate(heading, { selector: 'h1' });
+		typeMateInstance.apply();
+	});
 </script>
 
 <section class="container">
-  <div class="heading">
+  <div class="heading" bind:this={heading}>
 		<span class="meow">{news_entry.fields.category}</span><p class="date"><Time timestamp="{news_entry.sys.createdAt}" format="MM.DD.YYYY" /></p>
   	<h1 class="max-w-7xl">{news_entry.fields.title}</h1>
   </div>

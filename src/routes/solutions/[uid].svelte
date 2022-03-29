@@ -6,9 +6,19 @@
 <script>
 	import * as prismicH from '@prismicio/helpers';
 	export let document;
+	import { onMount } from 'svelte';
+
+	import TypeMate from 'typemate';
+
+	let heading;
+
+	onMount(() => {
+		const typeMateInstance = new TypeMate(heading, { selector: 'h1, p' });
+		typeMateInstance.apply();
+	});
 </script>
 
-<section id="heading" class="{document.uid}" style="background-image: url('{document.data.header_image.url}&q=100');">
+<section bind:this={heading} id="heading" class="{document.uid}" style="background-image: url('{document.data.header_image.url}&q=100');">
 	<div class="container">
 		<div class="md:w-3/5 lg:w-1/2">
 			<h1>Infima for {document.data.name[0].text}</h1>

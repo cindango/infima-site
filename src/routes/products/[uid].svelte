@@ -7,9 +7,19 @@
 <script>
 	import * as prismicH from '@prismicio/helpers';
 	export let document;
+  import { onMount } from 'svelte';
+
+	import TypeMate from 'typemate';
+
+	let heading;
+
+	onMount(() => {
+		const typeMateInstance = new TypeMate(heading);
+		typeMateInstance.apply();
+	});
 </script>
 
-<section id="heading">
+<section id="heading" bind:this={heading}>
   <div class="container">
     <div class="md:w-3/5 lg:w-1/2">
       <img class="icon" src="{document.data.icon.url}">

@@ -30,6 +30,7 @@
     "cookie": "^0.4.1",
     "prismic-dom": "^2.2.7",
     "swagger-ui": "^4.8.0",
-    "swagger-ui-dist": "^4.8.0"
+    "swagger-ui-dist": "^4.8.0",
+    "typemate": "^0.7.1"
   }
 }

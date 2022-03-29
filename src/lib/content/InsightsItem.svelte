@@ -6,9 +6,19 @@
   export let category;
   export let type;
   export let slug;
+  import { onMount } from 'svelte';
+
+	import TypeMate from 'typemate';
+
+	let insight;
+
+	onMount(() => {
+		const typeMateInstance = new TypeMate(insight, { selector: 'h4' });
+		typeMateInstance.apply();
+	});
 </script>
 
-<a class="box" href="/{type}/{type === 'insights' ? category + '/' : ''}{post.fields.slug}">
+<a bind:this={insight} class="box" href="/{type}/{type === 'insights' ? category + '/' : ''}{post.fields.slug}">
   <span class="meow">
     {#if post.fields.category}
       {post.fields.category.replace(/-/g, ' ')}
@@ -29,5 +39,8 @@
   }
   .box {
     gap: 30px;
+  }
+  h4 {
+    padding-right: 5%;
   }
 </style>
