@@ -91,7 +91,7 @@
 		justify-content: center;
 		align-items: center;
 		/*background: #5544a0;*/
-		background: #5945b3;
+		background: #5f4bb4;
 		text-transform: lowercase;
 	}
 
@@ -106,6 +106,7 @@
 		font-weight: 500;
 		font-size: 1rem;
 		padding-bottom: .5rem;
+		letter-spacing: .03rem;
 	}
 
 	footer .footer-links {
@@ -143,6 +144,7 @@
 		color: rgba(255,255,255,.5);
 		display: flex;
 		font-weight: 300;
+		letter-spacing: .03rem;
 	}
 
 	footer .copywright div:first-of-type {
