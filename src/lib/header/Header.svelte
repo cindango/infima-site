@@ -89,10 +89,9 @@
 
 <style>
 	.links > li {
-		height: 20px;
-		min-height: 20px;
+		height: 24px;
+		min-height: 24px;
 		transition: height .25s ease;
-		overflow: hidden;
 	}
 	.links > li > a {
 		padding-left: 8px;
