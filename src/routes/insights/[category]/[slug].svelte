@@ -28,8 +28,10 @@
 	import Body from './../../../lib/content/Body.svelte';
 	import { onMount } from 'svelte';
 
-	let downloadField = insights_entry.fields.download;
-	let downloadAllow = insights_entry.fields.allowDownload;
+	if (insights_entry.fields.download) {
+		let downloadField = insights_entry.fields.download;
+		let downloadAllow = insights_entry.fields.allowDownload;
+	}
 
 	onMount(() => {
 		hbspt.forms.create({
@@ -56,14 +58,16 @@
 
 				<h1>{insights_entry.fields.title}</h1>
 
-				<div class="w-full lg:grid lg:grid-cols-3 flex flex-col gap-4 lg:gap-2 contributors">
-					{#each insights_entry.fields.contributors as contributor}
-						<div>
-							<p class="c-name">{contributor.fields.name}</p>
-							<p class="c-title">{contributor.fields.professionalTitle}</p>
-						</div>
-					{/each}
-				</div>
+				{#if insights_entry.fields.contributors}
+					<div class="w-full lg:grid lg:grid-cols-3 flex flex-col gap-4 lg:gap-2 contributors">
+						{#each insights_entry.fields.contributors as contributor}
+							<div>
+								<p class="c-name">{contributor.fields.name}</p>
+								<p class="c-title">{contributor.fields.professionalTitle}</p>
+							</div>
+						{/each}
+					</div>
+				{/if}
 
 			</div>
 
@@ -83,7 +87,7 @@
 
 <style>
 	.heading {
-		margin: 2rem 0;
+		margin: 0 0 2rem;
 		gap: 2rem;
 	}
 	.insights-detail .heading h1 {
@@ -95,7 +99,6 @@
     border-bottom: .8px solid;
     padding-bottom: 0.25rem;
     display: inline-block;
-		font-size: 1.1rem;
 	}
 	.heading .date {
 		font-weight: 400;
@@ -146,6 +149,7 @@
 		}
 		.insights-detail .heading h1 {
 			font-size: 3.25rem;
+			padding-right: 5%;
 		}
 		:global(.insights-detail .content) {
 			padding-right: 5%;
@@ -153,8 +157,9 @@
 		:global(.insights-detail .content p) {
 			font-size: 1.15rem;
 		}
-		#request {
+		#request, .form-consent {
 			padding: 2rem;
+			padding-top: 0;
 		}
 	}
 </style>

@@ -22,6 +22,7 @@
   "type": "module",
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^15.12.0",
+    "@contentful/rich-text-types": "^15.12.0",
     "@fontsource/fira-mono": "^4.5.0",
     "@lukeed/uuid": "^2.0.0",
     "@stoplight/elements": "^7.5.13",
