@@ -37,10 +37,14 @@
 		typeMateInstance.apply();
 	});
 
+	let downloadAllow = insights_entry.fields.allowDownload;
+	let downloadField;
+
 	if (insights_entry.fields.download) {
-		let downloadField = insights_entry.fields.download;
-		let downloadAllow = insights_entry.fields.allowDownload;
+		downloadField = insights_entry.fields.download;
 	}
+
+
 
 	onMount(() => {
 		hbspt.forms.create({
@@ -55,7 +59,6 @@
       }
 		});
 	});
-	console.log(insights_entry);
 </script>
 
 <section class="container insights-detail">

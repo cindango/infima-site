@@ -50,26 +50,30 @@
 				<li class="sub-menu products" class:open="{products}" on:mouseenter={openProducts} on:mouseleave={closeNav}>
 					<a>Products</a>
 						<div class="dropdown" on:click={closeNav}>
-							<li>
-								<a href="/products/infima-platform">Infima Platform</a>
-							</li>
-							<li>
-								<a href="/products/infima-libraries">Infima Libraries</a>
-							</li>
-							<li>
-								<a href="/products/infima-apis">Infima APIs</a>
-							</li>
+							<ul>
+								<li>
+									<a href="/products/infima-platform">Infima Platform</a>
+								</li>
+								<li>
+									<a href="/products/infima-libraries">Infima Libraries</a>
+								</li>
+								<li>
+									<a href="/products/infima-apis">Infima APIs</a>
+								</li>
+							</ul>
 						</div>
 				</li>
 				<li class="sub-menu solutions" class:open="{solutions}" on:mouseenter={openSolutions} on:mouseleave={closeNav}>
 					<a>Solutions</a>
 						<div class="dropdown" on:click={closeNav}>
-							<li>
-								<a href="/solutions/asset-managers">Asset Managers</a>
-							</li>
-							<li>
-								<a href="/solutions/dealers">Dealers</a>
-							</li>
+							<ul>
+								<li>
+									<a href="/solutions/asset-managers">Asset Managers</a>
+								</li>
+								<li>
+									<a href="/solutions/dealers">Dealers</a>
+								</li>
+							</ul>
 						</div>
 				</li>
 				<li>
@@ -151,6 +155,7 @@
 	}
 	.i-logo {
 		opacity: 1;
+		transition: opacity .5s ease;
 	}
 	header.nav-s .i-logo {
 		opacity: .8;
@@ -191,7 +196,10 @@
 		text-transform: lowercase;
 	}
 
-	nav li:hover > a, header.expanded:hover nav li.open > a, header.expanded:hover nav ul > li > a:hover {
+	nav li:hover > a,
+	header.expanded:hover nav li.open > a,
+	header.expanded:hover nav li.open .dropdown a,
+	header.expanded:hover nav ul > li > a:hover {
 		color: rgba(255,255,255,1);
 	}
 

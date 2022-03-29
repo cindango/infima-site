@@ -27,6 +27,7 @@
 					<li>San Mateo, CA 94403</li>
 					<li>(650) 240 4950</li>
 					<li>info@infima.io</li>
+					<li><a href="https://www.linkedin.com/company/infima1/" target="_blank"><img src="/Icon_LinkedIn.svg" alt="LinkedIn" /></a>
 				</ul>
 			</div>
 			<div class="flex gap-8 flex-col">
@@ -118,7 +119,18 @@
     flex-direction: column;
     justify-content: space-between;
 		text-transform: lowercase;
-		color: rgba(255,255,255,.5);
+		color: rgba(255,255,255,.8);
+	}
+
+	footer .info li img {
+		width: 20px;
+		margin-top: .5rem;
+		opacity: .8;
+		transition: opacity .5s ease;
+	}
+
+	footer .info li img:hover {
+		opacity: 1;
 	}
 
 	footer strong img {
@@ -141,7 +153,7 @@
 		font-size: .9rem;
 		border-top: 1px solid rgba(255,255,255,.2);
 		padding-top: 20px;
-		color: rgba(255,255,255,.5);
+		color: rgba(255,255,255,.8);
 		display: flex;
 		font-weight: 300;
 		letter-spacing: .03rem;
@@ -154,7 +166,7 @@
 	}
 
 	footer .copywright a {
-		color: rgba(255,255,255,.5);
+		color: rgba(255,255,255,.8);
 		text-decoration: none;
 	}
 
@@ -172,7 +184,6 @@
 		}
 		.button.primary-btn {
 	    padding: 12px 30px 13px;
-	    font-size: 1.15rem;
 		}
 	}
 </style>
