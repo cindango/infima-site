@@ -118,7 +118,7 @@
 
 	<section class="container">
 		<div class="section-head">
-			<label><h2>Featured Insights</h2></label>
+			<label><h2>News + Research</h2></label>
 			<div class="grid lg:grid-cols-3 gap-8 w-full">
 				{#each blogs.items as post}
 					{#if post.fields.featured === true}

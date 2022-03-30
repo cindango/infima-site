@@ -3,10 +3,10 @@
   import InsightsItem from './../../lib/content/InsightsItem.svelte';
 
   export async function load({ fetch }) {
-      const [{ blogs }] = await Promise.all([fetch('/insights/data.json').then((r) => r.json())]);
+      const [{ insights }] = await Promise.all([fetch('/insights/data.json').then((r) => r.json())]);
       return {
           props: {
-              blogs
+              insights
           }
       };
   }
@@ -15,7 +15,7 @@
 <script>
   import { page } from '$app/stores';
   //category = $page.url.searchParams.get('category');
-  export let blogs;
+  export let insights;
   let value = '';
   let selected;
   let category = '';
@@ -26,15 +26,12 @@
 
   <div class="header flex flex-row">
 
-    <h1 class="w-1/2 lg:w-1/3">Insights</h1>
+    <h1 class="w-1/2 lg:w-1/3">Research</h1>
 
     <div class="categories w-1/2 lg:w-2/3">
       <select bind:value={selected} class="mobile-categories">
         <option value={''}>
           All Categories
-        </option>
-        <option value={'News'}>
-          News
         </option>
         <option value={'market-map'}>
           Market Maps
@@ -50,9 +47,6 @@
       <input id="all" type=radio bind:group={category} name="category" value={''}>
         <label for="all"><p>All</p></label>
 
-      <input id="news" type=radio bind:group={category} name="category" value={'News'}>
-        <label for="news"><p>News</p></label>
-
       <input id="mm" type=radio bind:group={category} name="category" value={'market-map'}>
         <label for="mm"><p>Market Maps</p></label>
 
@@ -67,7 +61,7 @@
   </div>
 
   <div class="grid lg:grid-cols-3 gap-8 w-full">
-    {#each blogs.items as post}
+    {#each insights.items as post}
       {#if category || selected}
         {#if post.fields.category === category || post.fields.category === selected}
           <InsightsItem post={post} category={post.fields.category} type={post.sys.contentType.sys.id} />

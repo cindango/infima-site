@@ -92,7 +92,7 @@
 		justify-content: center;
 		align-items: center;
 		/*background: #5544a0;*/
-		background: #5f4bb4;
+		background: #694FB1;
 		text-transform: lowercase;
 	}
 

@@ -1,16 +1,16 @@
 import { client } from '$lib/contentfulClient';
 
 export async function get() {
-    const insights = await client.getEntries({
-        content_type: 'insights',
+    const news = await client.getEntries({
+        content_type: 'news',
         order: '-sys.createdAt'
     });
 
-    if (insights) {
+    if (news) {
         return {
             status: 200,
             body: {
-                insights
+                news
             }
         };
     }

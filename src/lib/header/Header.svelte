@@ -10,6 +10,7 @@
 	let show = false;
 	let products = false;
 	let solutions = false;
+	let about = false;
 
 	onMount(() => {
 		loaded = true;
@@ -25,10 +26,16 @@
 		solutions = true;
 	}
 
+	function openAbout(e) {
+		navState = 'expanded';
+		about = true;
+	}
+
 	function closeNav(e) {
 		navState = '';
 		products = false;
 		solutions = false;
+		about = false;
 	}
 
 </script>
@@ -77,10 +84,20 @@
 						</div>
 				</li>
 				<li>
-					<a sveltekit:prefetch href="/insights">Insights</a>
+					<a href="/insights">Research</a>
 				</li>
-				<li>
-					<a sveltekit:prefetch href="/company">Company</a>
+				<li class="sub-menu solutions" class:open="{about}" on:mouseenter={openAbout} on:mouseleave={closeNav}>
+					<a href="/about">More</a>
+						<div class="dropdown" on:click={closeNav}>
+							<ul>
+								<li>
+									<a href="/about">About</a>
+								</li>
+								<li>
+									<a href="/news">News</a>
+								</li>
+							</ul>
+						</div>
 				</li>
 				<li>
 					<a href="https://app.infima.io" target="_blank">Sign In</a>
