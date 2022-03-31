@@ -54,6 +54,10 @@ body {
 	padding-bottom: 10rem;
 }
 
+#heading > .container {
+	padding-bottom: 5rem;
+}
+
 h1,
 h2,
 h3,
@@ -389,6 +393,9 @@ button:focus:not(:focus-visible) {
 	}
 	.container:last-child {
 		padding-bottom: 16rem;
+	}
+	#heading > .container {
+		padding-bottom: 8rem;
 	}
 	h1 {
 		font-size: 4.25rem;
