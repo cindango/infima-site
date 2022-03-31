@@ -13,8 +13,6 @@
       };
   }
 
-
-
 </script>
 
 <script>
@@ -44,7 +42,13 @@
 			<RequestDemo />
 		</div>
 	</section>
+{:catch error}
+  <p>Something went wrong:</p>
+  <pre>{error.message}</pre>
+{/await}
 
+{#await prismicQuery}
+{:then document}
 	{#each document.data.body as slice}
 
 		{#if slice.slice_type === "products"}
@@ -117,7 +121,11 @@
 
 	{/each}
 
+{/await}
 
+
+{#await blogs}
+{:then blogs}
 	<section class="container">
 		<div class="section-head">
 			<label><h2>News + Insights</h2></label>
@@ -130,10 +138,8 @@
 			{/each}
 		</div>
 	</section>
-{:catch error}
-  <p>Something went wrong:</p>
-  <pre>{error.message}</pre>
 {/await}
+
 
 <style>
 	#loading {
