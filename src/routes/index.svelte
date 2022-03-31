@@ -27,6 +27,7 @@
 	import InsightsItem from './../lib/content/InsightsItem.svelte';
 	import Button from './../lib/buttons/Button.svelte';
 	export let blogs;
+	export let document;
 </script>
 
 <svelte:head>

@@ -2,25 +2,25 @@
 	export const prerender = true;
 
 	export async function load({ fetch, params }) {
-				const { category, slug } = params;
-        const url = `/insights/${params.category}/${params.slug}.json`;
-        const res = await fetch(url);
+		const { category, slug } = params;
+    const url = `/insights/${params.category}/${params.slug}.json`;
+    const res = await fetch(url);
 
-        if (res.ok) {
-            const { insights_entry } = await res.json();
-
-            return {
-                props: {
-                    insights_entry: insights_entry.items[0]
-                }
-            };
-        }
+    if (res.ok) {
+        const { insights_entry } = await res.json();
 
         return {
-            status: res.status,
-            error: new Error(`Could not load ${url}`)
+            props: {
+                insights_entry: insights_entry.items[0]
+            }
         };
     }
+
+    return {
+        status: res.status,
+        error: new Error(`Could not load ${url}`)
+    };
+  }
 </script>
 
 <script>
@@ -64,6 +64,10 @@
 
 <svelte:head>
 <script async charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<!--[if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif]-->
+<script defer src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 </svelte:head>
 
 <section class="container insights-detail">
