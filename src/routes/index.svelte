@@ -19,6 +19,8 @@
       };
   }
 
+
+
 </script>
 
 <script>
@@ -35,7 +37,7 @@
 {#await prismicQuery}
   <div id="loading"></div>
 {:then document}
-	<section id="splash" style="background-image: url('{document.data.header_image.url}&q=100');">
+	<section id="splash" style="background-image: url('{document.data.header_image.url}&q=90');">
 		<div class="container">
 			<div class="lg:w-2/3">{@html prismicH.asHTML(document.data.heading)}</div>
 			<p>{@html PrismicDom.RichText.asHtml(document.data.tagline)}</p>
@@ -58,7 +60,7 @@
 
 					{#each slice.items as product}
 						<a class="box" href="/{product.link.type}s/{product.link.uid}">
-							<img class="icon" src="{product.icon.url}" />
+							<img class="icon" src="{product.icon.url}" width="51.2" height="40" alt="{product.icon.alt}" />
 							<h4>{product.name}</h4>
 							<span class="sm:w-2/3 lg:w-full">{@html PrismicDom.RichText.asHtml(product.description)}</span>
 							<TextButton />
@@ -83,8 +85,8 @@
 				<div class="grid md:grid-cols-2 gap-8 w-full">
 
 					{#each slice.items as solution}
-						<a class="box solution" href="/{solution.link.type}s/{solution.link.uid}" style="background-image: url({solution.background.url}&q=100);">
-							<img class="icon" src="{solution.icon.url}" />
+						<a class="box solution" href="/{solution.link.type}s/{solution.link.uid}" style="background-image: url({solution.background.url}&q=95);">
+							<img class="icon" src="{solution.icon.url}" width="60" height="60" alt="{solution.icon.alt}" />
 							<h4>{solution.name}</h4>
 							<span class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(solution.description)}</span>
 							<TextButton />
@@ -104,7 +106,7 @@
 					<div class="section-head">
 						<label>{@html prismicH.asHTML(callout.title)}</label>
 						<h3 class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(callout.description)}</h3>
-						<a href="/{callout.link.uid}" class="button primary-btn">{callout.link_text} <img src="/RightArrow.svg" /></a>
+						<a href="/{callout.link.uid}" class="button primary-btn">{callout.link_text} <span class="material-icons">chevron_right</span></a>
 					</div>
 
 				</section>

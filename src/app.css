@@ -310,10 +310,10 @@ button:focus:not(:focus-visible) {
 	font-weight: 500;
 	color: #fff;
 	cursor: pointer;
+	line-height: 1;
 }
 .button.text-btn {
   font-size: .9rem;
-  gap: 10px;
 }
 
 .button.text-btn img {
@@ -327,7 +327,6 @@ button:focus:not(:focus-visible) {
 	margin-top: 20px;
 	padding: 10px 20px 12px;
 	border: 1px solid;
-	gap: 10px;
 	transition: background 1s ease, border .25s ease;
 	font-size: .95rem;
 }
