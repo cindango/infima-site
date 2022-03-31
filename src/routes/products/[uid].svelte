@@ -8,7 +8,7 @@
 	import * as prismicH from '@prismicio/helpers';
 	export let document;
   import { onMount } from 'svelte';
-
+  import Button from './../../lib/buttons/Button.svelte';
 	import TypeMate from 'typemate';
 
 	let heading;

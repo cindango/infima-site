@@ -1,11 +1,5 @@
 <script context="module">
-	export const prerender = true;
-
 	import createClient from '$lib/prismic';
-	import PrismicDom from 'prismic-dom';
-	import TextButton from './../lib/buttons/TextButton.svelte';
-	import RequestDemo from './../lib/buttons/RequestDemo.svelte';
-	import InsightsItem from './../lib/content/InsightsItem.svelte';
 
 	const client = createClient()
   const prismicQuery = client.getSingle('homepage', 'homepage');
@@ -27,6 +21,11 @@
 	import { onMount } from "svelte";
 	import * as prismicH from '@prismicio/helpers';
 	import { fade } from 'svelte/transition';
+	import PrismicDom from 'prismic-dom';
+	import TextButton from './../lib/buttons/TextButton.svelte';
+	import RequestDemo from './../lib/buttons/RequestDemo.svelte';
+	import InsightsItem from './../lib/content/InsightsItem.svelte';
+	import Button from './../lib/buttons/Button.svelte';
 	export let blogs;
 </script>
 
@@ -106,7 +105,7 @@
 					<div class="section-head">
 						<label>{@html prismicH.asHTML(callout.title)}</label>
 						<h3 class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(callout.description)}</h3>
-						<a href="/{callout.link.uid}" class="button primary-btn">{callout.link_text} <img src="/RightArrow.svg" alt="Right Arrow" /></a>
+						<Button href="/{callout.link.uid}" label="{callout.link_text}" />
 					</div>
 
 				</section>
@@ -121,13 +120,13 @@
 	<section class="container">
 		<div class="section-head">
 			<label><h2>News + Insights</h2></label>
-			<div class="grid lg:grid-cols-3 gap-8 w-full">
-				{#each blogs.items as post}
-					{#if post.fields.featured === true}
-						<InsightsItem post={post} category={post.fields.category} type={post.sys.contentType.sys.id} />
-					{/if}
-				{/each}
-			</div>
+		</div>
+		<div class="grid lg:grid-cols-3 gap-8 w-full">
+			{#each blogs.items as post}
+				{#if post.fields.featured === true}
+					<InsightsItem post={post} category={post.fields.category} type={post.sys.contentType.sys.id} />
+				{/if}
+			{/each}
 		</div>
 	</section>
 {:catch error}

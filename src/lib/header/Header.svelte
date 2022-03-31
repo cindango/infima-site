@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import logo from './InfimaLogo_Thin.svg';
-	import arrow from './expand_more.svg';
 	export let document;
 
 	let y;
@@ -60,7 +59,7 @@
 
 				<li class="sub-menu products" class:open="{products}" on:mouseenter={openProducts} on:mouseleave={closeNav}>
 
-					<a>Products <img src="{arrow}" alt="expand arrow" /></a>
+					<a>Products <span class="material-icons">expand_more</span></a>
 
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
@@ -80,7 +79,7 @@
 
 				<li class="sub-menu solutions" class:open="{solutions}" on:mouseenter={openSolutions} on:mouseleave={closeNav}>
 
-					<a>Solutions <img src="{arrow}" alt="expand arrow" /></a>
+					<a>Solutions <span class="material-icons">expand_more</span></a>
 
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
@@ -105,7 +104,7 @@
 
 				<li class="sub-menu solutions" class:open="{about}" on:mouseenter={openAbout} on:mouseleave={closeNav}>
 
-					<a>More <img src="{arrow}" alt="expand arrow" /></a>
+					<a>More <span class="material-icons">expand_more</span></a>
 
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
@@ -140,12 +139,14 @@
 	}
 	.links > li > a {
 		padding-left: 8px;
-		line-height: 1.3;
+		line-height: 1.2;
 	}
-	.links > li > a img {
-		display: inline;
+	.links > li > a span {
 		vertical-align: bottom;
 		opacity: .9;
+		font-size: 18px;
+		margin-left: -2px;
+    margin-bottom: -1px;
 	}
 	.dropdown {
 		position: absolute;

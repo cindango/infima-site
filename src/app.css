@@ -309,11 +309,13 @@ button:focus:not(:focus-visible) {
 	color: #fff;
 	cursor: pointer;
 	line-height: 1;
-	gap: 10px;
 }
 .button.text-btn {
   font-size: .9rem;
-	gap: 10px;
+}
+
+.button.text-btn span {
+	font-size: 22px;
 }
 
 .button.text-btn img {
@@ -373,7 +375,8 @@ button:focus:not(:focus-visible) {
 
 .section-head {
 	border-top: 1px solid rgba(255,255,255,.2);
-	padding: 3vh 0 12vh;
+	padding-top: 2rem;
+	padding-bottom: 8rem;
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;

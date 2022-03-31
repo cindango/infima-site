@@ -7,6 +7,7 @@
 	import '@fontsource/barlow-semi-condensed/300.css';
 	import '@fontsource/barlow-semi-condensed/400.css';
 	import '@fontsource/barlow-semi-condensed/500.css';
+	import "@fontsource/material-icons";
 	import logo from './../lib/header/InfimaLogo_Thin.svg';
 	import Time from "svelte-time";
 </script>
@@ -90,6 +91,7 @@
 
 	.get-started .button {
 		display: inline-block;
+		margin-bottom: 20px;
 	}
 
 	footer {
@@ -139,7 +141,8 @@
 		opacity: 1;
 	}
 
-	footer strong img {
+	footer .info .i-logo {
+		width: 90px;
 		padding: 1rem 0;
 	}
 
@@ -188,8 +191,8 @@
 		footer .container {
 			padding: 8vh 2rem;
 		}
-		.button.primary-btn {
-	    padding: 12px 30px 13px;
+		footer .info .i-logo {
+			width: 113px;
 		}
 	}
 </style>

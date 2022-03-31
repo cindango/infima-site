@@ -1,1 +1,1 @@
-<a class="button primary-btn">Request a Demo <img src="/RightArrow.svg" alt="Right Arrow" /></a>
+<a class="button primary-btn">Request a Demo <span class="material-icons">chevron_right</span></a>
