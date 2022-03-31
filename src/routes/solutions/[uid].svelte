@@ -24,7 +24,7 @@
 			<h1>Infima for {document.data.name[0].text}</h1>
 			<p>{@html PrismicDom.RichText.asHtml(document.data.short_description)}</p>
 			{#if document.data.related_product}
-				<a href="/{document.data.related_product.type}s/{document.data.related_product.uid}" class="button primary-btn">Explore {document.data.related_product.data.name[0].text} <span class="material-icons">chevron_right</span></a>
+				<a href="/{document.data.related_product.type}s/{document.data.related_product.uid}" class="button primary-btn">Explore {document.data.related_product.data.name[0].text} <img src="/RightArrow.svg" alt="Right Arrow" /></a>
 			{/if}
 		</div>
 	</div>
