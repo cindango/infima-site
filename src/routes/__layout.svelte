@@ -27,7 +27,7 @@
 					<li>San Mateo, CA 94403</li>
 					<li>(650) 240 4950</li>
 					<li>info@infima.io</li>
-					<li><a href="https://www.linkedin.com/company/infima1/" target="_blank"><img src="/Icon_LinkedIn.svg" alt="LinkedIn" /></a>
+					<li><a href="https://www.linkedin.com/company/infima1/" target="_blank"><img src="/Icon_LinkedIn.svg" alt="LinkedIn" width="20" height="20" /></a>
 				</ul>
 			</div>
 			<div class="flex gap-8 flex-col">

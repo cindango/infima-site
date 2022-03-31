@@ -106,7 +106,7 @@
 					<div class="section-head">
 						<label>{@html prismicH.asHTML(callout.title)}</label>
 						<h3 class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(callout.description)}</h3>
-						<a href="/{callout.link.uid}" class="button primary-btn">{callout.link_text} <span class="material-icons">chevron_right</span></a>
+						<a href="/{callout.link.uid}" class="button primary-btn">{callout.link_text} <img src="/RightArrow.svg" alt="Right Arrow" /></a>
 					</div>
 
 				</section>

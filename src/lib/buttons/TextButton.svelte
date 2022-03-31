@@ -1,14 +1,11 @@
 <script>
 export let label = 'Learn More';
 </script>
-<button class="button text-btn">{label} <span class="material-icons">chevron_right</span></button>
+<button class="button text-btn">{label} <img src="/RightArrow.svg" alt="Right Arrow" /></button>
 
 <style>
 :global(.box .button.text-btn) {
   position: absolute;
   bottom: 2rem;
-}
-span {
-  font-size: 22px;
 }
 </style>

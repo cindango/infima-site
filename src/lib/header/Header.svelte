@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import logo from './InfimaLogo_Thin.svg';
+	import arrow from './expand_more.svg';
 	export let document;
 
 	let y;
@@ -59,7 +60,7 @@
 
 				<li class="sub-menu products" class:open="{products}" on:mouseenter={openProducts} on:mouseleave={closeNav}>
 
-					<a>Products <span class="material-icons">expand_more</span></a>
+					<a>Products <img src="{arrow}" alt="expand arrow" /></a>
 
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
@@ -79,7 +80,7 @@
 
 				<li class="sub-menu solutions" class:open="{solutions}" on:mouseenter={openSolutions} on:mouseleave={closeNav}>
 
-					<a>Solutions <span class="material-icons">expand_more</span></a>
+					<a>Solutions <img src="{arrow}" alt="expand arrow" /></a>
 
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
@@ -104,7 +105,7 @@
 
 				<li class="sub-menu solutions" class:open="{about}" on:mouseenter={openAbout} on:mouseleave={closeNav}>
 
-					<a>More <span class="material-icons">expand_more</span></a>
+					<a>More <img src="{arrow}" alt="expand arrow" /></a>
 
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
@@ -139,10 +140,12 @@
 	}
 	.links > li > a {
 		padding-left: 8px;
+		line-height: 1.3;
 	}
-	.links > li > a .material-icons {
-		font-size: 18px;
-    vertical-align: bottom;
+	.links > li > a img {
+		display: inline;
+		vertical-align: bottom;
+		opacity: .9;
 	}
 	.dropdown {
 		position: absolute;
@@ -231,7 +234,7 @@
 
 	nav a {
 		height: 100%;
-		color: rgba(255,255,255,.8);
+		color: rgba(255,255,255,.9);
 		font-weight: 400;
 		font-size: 1rem;
 		letter-spacing: 0.04em;
@@ -244,11 +247,12 @@
 	header.expanded:hover nav li.open > a,
 	header.expanded:hover nav li.open .dropdown a,
 	header.expanded:hover nav ul > li > a:hover {
+		opacity: 1;
 		color: rgba(255,255,255,1);
 	}
 
 	header.expanded:hover nav ul > li > a {
-		color: rgba(255,255,255,.35);
+		opacity: .5;
 	}
 
 	@media (min-width:720px) {

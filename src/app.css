@@ -311,9 +311,11 @@ button:focus:not(:focus-visible) {
 	color: #fff;
 	cursor: pointer;
 	line-height: 1;
+	gap: 10px;
 }
 .button.text-btn {
   font-size: .9rem;
+	gap: 10px;
 }
 
 .button.text-btn img {
