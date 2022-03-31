@@ -54,7 +54,7 @@ body {
 	padding-bottom: 10rem;
 }
 
-#heading > .container {
+#heading > .container, #splash > .container {
 	padding-bottom: 5rem;
 }
 
@@ -394,7 +394,7 @@ button:focus:not(:focus-visible) {
 	.container:last-child {
 		padding-bottom: 16rem;
 	}
-	#heading > .container {
+	#heading > .container, #splash > .container {
 		padding-bottom: 8rem;
 	}
 	h1 {
