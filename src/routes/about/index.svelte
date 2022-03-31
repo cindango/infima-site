@@ -22,21 +22,24 @@
 {:then document}
 	<section id="heading" class="container">
 		<div class="flex flex-col gap-4">
-			<div class="lg:w-2/3">{@html prismicH.asHTML(document.data.title)}</div>
+			<div class="lg:w-2/3">{@html prismicH.asHTML(document.data.heading)}</div>
 			<p class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(document.data.intro)}</p>
 		</div>
 	</section>
 
-  <section class="container">
-  	{#each document.data.body as slice}
 
-        <div class="grid grid-cols-4 gap-x-3 gap-y-8">
+	{#each document.data.body as slice}
+
+    {#if slice.slice_type === "team"}
+      <section class="container team">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-4 md:gap-y-8">
 
           {#each slice.items as person}
 
           <div class="flex flex-row gap-3 person items-start">
             <div class="headshot flex-none">
-              <img src="/Kay_Giesecke.png" />
+              <img src="{person.headshot.url}" />
             </div>
             <div class="info">
               <strong>{person.name[0].text}</strong>
@@ -46,10 +49,35 @@
 
           {/each}
 
-      </div>
+        </div>
 
-  	{/each}
-  </section>
+      </section>
+    {/if}
+
+    {#if slice.slice_type === "logos"}
+
+      <section class="container investors">
+
+        <div class="section-head">
+          <label>{@html prismicH.asHTML(slice.primary.title)}</label>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+
+          {#each slice.items as investor}
+
+            <img src="{investor.logo.url}" />
+
+          {/each}
+
+        </div>
+
+      </section>
+
+    {/if}
+
+	{/each}
+
 
 {:catch error}
   <p>Something went wrong:</p>
@@ -64,10 +92,11 @@
 
   #heading.container {
     padding-bottom: 0;
+    padding-top: 8rem;
   }
 
-  #heading p {
-    font-size: 1.5rem;
+  .container.team {
+    padding-top: 3rem;
   }
 
   .person {
@@ -78,7 +107,14 @@
     font-weight: 500;
     color: var(--text-color);
     letter-spacing: .03rem;
-    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .info p {
+    color: rgba(255,255,255,.7);
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 1.2;
   }
 
   .headshot {
@@ -87,22 +123,35 @@
   }
 
   .headshot img {
-    width: 120px;
+    width: 90px;
     height: auto;
     filter: grayscale(1);
     border-radius: 3px;
   }
 
-  .info p {
-    color: rgba(255,255,255,.7);
-    font-weight: 300;
-    letter-spacing: 0;
-    line-height: 1.2;
-    font-size: 1.1rem;
-  }
-
 	@media (min-width: 720px) {
-
+    #heading.container {
+      padding-bottom: 0;
+      padding-top: 10rem;
+    }
+    .container.team {
+      padding-top: 5rem;
+    }
+    #heading p {
+      font-size: 1.5rem;
+    }
+    .person strong {
+      font-size: 1.25rem;
+    }
+    .info p {
+      font-size: 1.1rem;
+    }
 	}
+
+  @media (min-width: 1024px) {
+    .headshot img {
+      width: 120px;
+    }
+  }
 
 </style>

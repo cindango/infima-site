@@ -47,7 +47,11 @@ body {
 	max-width: 1600px;
 	margin: 0 auto;
 	box-sizing: border-box;
-	padding: 4rem 1rem;
+	padding: 5rem 1rem;
+}
+
+.container:last-child {
+	padding-bottom: 10rem;
 }
 
 h1,
@@ -155,6 +159,33 @@ select {
     5px 5px;
 	background-repeat: no-repeat;
 }
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* HUBSPOT FORMS */
 
 #request fieldset, .hs-submit {
 	margin: 0 auto;
@@ -354,7 +385,10 @@ button:focus:not(:focus-visible) {
 
 @media (min-width: 720px) {
 	.container {
-		padding: 14vh 2rem;
+		padding: 8rem 2rem;
+	}
+	.container:last-child {
+		padding-bottom: 16rem;
 	}
 	h1 {
 		font-size: 4.25rem;

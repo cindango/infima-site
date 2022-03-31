@@ -46,6 +46,7 @@
 	<div class="inner">
 	{#if loaded}
 		<nav>
+
 			<ul>
 				<li>
 					<a sveltekit:prefetch href="/">
@@ -53,9 +54,13 @@
 					</a>
 				</li>
 			</ul>
+
 			<ul class="links">
+
 				<li class="sub-menu products" class:open="{products}" on:mouseenter={openProducts} on:mouseleave={closeNav}>
-					<a>Products</a>
+
+					<a>Products <span class="material-icons">expand_more</span></a>
+
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
 								<li>
@@ -69,9 +74,13 @@
 								</li>
 							</ul>
 						</div>
+
 				</li>
+
 				<li class="sub-menu solutions" class:open="{solutions}" on:mouseenter={openSolutions} on:mouseleave={closeNav}>
-					<a>Solutions</a>
+
+					<a>Solutions <span class="material-icons">expand_more</span></a>
+
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
 								<li>
@@ -82,12 +91,21 @@
 								</li>
 							</ul>
 						</div>
+
 				</li>
+
 				<li>
-					<a href="/insights">Research</a>
+
+					<a href="/insights">
+						Insights
+					</a>
+
 				</li>
+
 				<li class="sub-menu solutions" class:open="{about}" on:mouseenter={openAbout} on:mouseleave={closeNav}>
-					<a href="/about">More</a>
+
+					<a>More <span class="material-icons">expand_more</span></a>
+
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
 								<li>
@@ -98,10 +116,15 @@
 								</li>
 							</ul>
 						</div>
+
 				</li>
+
 				<li>
-					<a href="https://app.infima.io" target="_blank">Sign In</a>
+					<a href="https://app.infima.io" target="_blank">
+						Sign In
+					</a>
 				</li>
+
 			</ul>
 		</nav>
 	{/if}
@@ -116,6 +139,10 @@
 	}
 	.links > li > a {
 		padding-left: 8px;
+	}
+	.links > li > a .material-icons {
+		font-size: 18px;
+    vertical-align: bottom;
 	}
 	.dropdown {
 		position: absolute;
