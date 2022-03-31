@@ -1,24 +1,11 @@
 <script context="module">
-	import createClient from '$lib/prismic';
 
-	const client = createClient()
-  const prismicQuery = client.getSingle('homepage', 'homepage');
-
-	export async function load({ fetch }) {
-      const [{ blogs }] = await Promise.all([fetch('/data.json').then((r) => r.json())]);
-      return {
-          props: {
-              blogs
-          }
-      };
-  }
 
 </script>
 
 <script>
 	import { onMount } from "svelte";
 	import * as prismicH from '@prismicio/helpers';
-	import { fade } from 'svelte/transition';
 	import PrismicDom from 'prismic-dom';
 	import TextButton from './../lib/buttons/TextButton.svelte';
 	import RequestDemo from './../lib/buttons/RequestDemo.svelte';
@@ -32,9 +19,6 @@
 	<title>Home</title>
 </svelte:head>
 
-{#await prismicQuery}
-  <div id="loading"></div>
-{:then document}
 	<section id="splash" style="background-image: url('{document.data.header_image.url}&q=90');">
 		<div class="container">
 			<div class="lg:w-2/3">{@html prismicH.asHTML(document.data.heading)}</div>
@@ -42,13 +26,7 @@
 			<RequestDemo />
 		</div>
 	</section>
-{:catch error}
-  <p>Something went wrong:</p>
-  <pre>{error.message}</pre>
-{/await}
 
-{#await prismicQuery}
-{:then document}
 	{#each document.data.body as slice}
 
 		{#if slice.slice_type === "products"}
@@ -120,25 +98,6 @@
 		{/if}
 
 	{/each}
-
-{/await}
-
-
-{#await blogs}
-{:then blogs}
-	<section class="container">
-		<div class="section-head">
-			<label><h2>News + Insights</h2></label>
-		</div>
-		<div class="grid lg:grid-cols-3 gap-8 w-full">
-			{#each blogs.items as post}
-				{#if post.fields.featured === true}
-					<InsightsItem post={post} category={post.fields.category} type={post.sys.contentType.sys.id} />
-				{/if}
-			{/each}
-		</div>
-	</section>
-{/await}
 
 
 <style>
