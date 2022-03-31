@@ -27,7 +27,7 @@
 	export let insights_entry;
 	import Body from './../../../lib/content/Body.svelte';
 	import { onMount } from 'svelte';
-
+	import { fade } from 'svelte/transition';
 	import TypeMate from 'typemate';
 
 	let heading;
@@ -43,23 +43,28 @@
 	if (insights_entry.fields.download) {
 		downloadField = insights_entry.fields.download;
 	}
-
-
-
+	let visible = false;
 	onMount(() => {
-		hbspt.forms.create({
-			region: "na1",
-			portalId: "8882403",
-			formId: "39051910-1e1c-44d0-9e0f-44a12857f6ab",
-			target: "#request",
-			onFormSubmitted: function($form) {
-				if (downloadAllow === true && downloadField !== null) {
-					window.open(insights_entry.fields.download.fields.file.url, '_blank');
-				}
-      }
-		});
+		setTimeout(() => {
+			visible = true;
+			hbspt.forms.create({
+				region: "na1",
+				portalId: "8882403",
+				formId: "39051910-1e1c-44d0-9e0f-44a12857f6ab",
+				target: "#request",
+				onFormSubmitted: function($form) {
+					if (downloadAllow === true && downloadField !== null) {
+						window.open(insights_entry.fields.download.fields.file.url, '_blank');
+					}
+	      }
+			});
+	  }, 250);
 	});
 </script>
+
+<svelte:head>
+<script async charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+</svelte:head>
 
 <section class="container insights-detail">
   <div class="lg:flex lg:flex-row gap-12 insights-frame">
@@ -88,12 +93,14 @@
 		</div>
 		<div class="w-full lg:w-1/3">
 			<h4>Request Download</h4>
-			<div id="request"></div>
-			<div class="form-consent">
-			<p>Infima Technologies, Inc. is committed to protecting and respecting your privacy, and we’ll only use your personal information to administer your account and to provide the products and services you requested from us. From time to time, we would like to contact you about our products and services, as well as other content that may be of interest to you. If you consent to us contacting you for this purpose, please tick above to say how you would like us to contact you.</p>
-			<p>You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy.</p>
-			<p>By clicking submit below, you consent to allow infima.io to store and process the personal information submitted above to provide you the content requested.</p>
-			</div>
+			{#if visible}
+				<div id="request" in:fade="{{delay: 250}}"></div>
+				<div class="form-consent" in:fade="{{delay: 500}}">
+					<p>Infima Technologies, Inc. is committed to protecting and respecting your privacy, and we’ll only use your personal information to administer your account and to provide the products and services you requested from us. From time to time, we would like to contact you about our products and services, as well as other content that may be of interest to you. If you consent to us contacting you for this purpose, please tick above to say how you would like us to contact you.</p>
+					<p>You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy.</p>
+					<p>By clicking submit below, you consent to allow infima.io to store and process the personal information submitted above to provide you the content requested.</p>
+				</div>
+			{/if}
 		</div>
 	</div>
 </section>
