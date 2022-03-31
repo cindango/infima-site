@@ -7,7 +7,6 @@
 	import '@fontsource/barlow-semi-condensed/300.css';
 	import '@fontsource/barlow-semi-condensed/400.css';
 	import '@fontsource/barlow-semi-condensed/500.css';
-	import "@fontsource/material-icons";
 	import logo from './../lib/header/InfimaLogo_Thin.svg';
 	import Time from "svelte-time";
 </script>

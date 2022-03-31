@@ -59,7 +59,7 @@
 
 				<li class="sub-menu products" class:open="{products}" on:mouseenter={openProducts} on:mouseleave={closeNav}>
 
-					<a>Products <span class="material-icons">expand_more</span></a>
+					<a>Products <span class="icon-expand_more"></span></a>
 
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
@@ -79,7 +79,7 @@
 
 				<li class="sub-menu solutions" class:open="{solutions}" on:mouseenter={openSolutions} on:mouseleave={closeNav}>
 
-					<a>Solutions <span class="material-icons">expand_more</span></a>
+					<a>Solutions <span class="icon-expand_more"></span></a>
 
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
@@ -104,7 +104,7 @@
 
 				<li class="sub-menu solutions" class:open="{about}" on:mouseenter={openAbout} on:mouseleave={closeNav}>
 
-					<a>More <span class="material-icons">expand_more</span></a>
+					<a>More <span class="icon-expand_more"></span></a>
 
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
