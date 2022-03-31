@@ -27,7 +27,6 @@
 	export let insights_entry;
 	import Body from './../../../lib/content/Body.svelte';
 	import { onMount } from 'svelte';
-	import jQuery from 'jquery';
 
 	import TypeMate from 'typemate';
 
