@@ -37,7 +37,7 @@
 {#await prismicQuery}
   <div id="loading"></div>
 {:then document}
-	<section id="splash">
+	<section id="splash" style="background-image: url('{document.data.header_image.url}&q=90');">
 		<div class="container">
 			<div class="lg:w-2/3">{@html prismicH.asHTML(document.data.heading)}</div>
 			<p>{@html PrismicDom.RichText.asHtml(document.data.tagline)}</p>
@@ -137,10 +137,9 @@
 
 <style>
 	#loading {
-		height: 96vh;
-		width: 100%;
+		margin-bottom: 4vh;
 	}
-	#splash {
+	#splash, #loading  {
 		height: 96vh;
 		min-height: 700px;
 		display: flex;
