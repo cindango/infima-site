@@ -1,19 +1,23 @@
 <script context="module">
 
-
-
 </script>
-
 <script>
 	import { onMount } from "svelte";
+	import { fade } from 'svelte/transition';
 	import * as prismicH from '@prismicio/helpers';
 	import PrismicDom from 'prismic-dom';
 	import TextButton from './../lib/buttons/TextButton.svelte';
 	import RequestDemo from './../lib/buttons/RequestDemo.svelte';
 	import InsightsItem from './../lib/content/InsightsItem.svelte';
 	import Button from './../lib/buttons/Button.svelte';
-	export let blogs;
 	export let document;
+
+	const getInsights = async () => {
+      var response = await fetch('https://cdn.contentful.com/spaces/os6xljkhzssb/environments/master/entries?access_token=4vOkJVsrvDHzcvRYEt7ID9rEiKR0Zi44rirbvVDnbrE&sys.contentType.sys.id%5Bin%5D=insights,news');
+      var data = await response.json();
+      return data;
+  }
+  let promise = getInsights();
 </script>
 
 <svelte:head>
@@ -99,6 +103,24 @@
 	{/if}
 
 {/each}
+
+<section class="container">
+		<div class="section-head">
+			<label><h2>News + Insights</h2></label>
+			{#await promise}
+			{:then insights}
+				<div class="grid lg:grid-cols-3 gap-8 w-full" in:fade>
+					{#each insights.items as insight}
+						{#if insight.fields.featured === true}
+				    	<InsightsItem post={insight} category={insight.fields.category} type={insight.sys.contentType.sys.id} />
+						{/if}
+					{/each}
+				</div>
+			{:catch err}
+				<h2>Error while loading the data</h2>
+			{/await}
+		</div>
+	</section>
 
 <style>
 	#loading {

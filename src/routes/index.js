@@ -1,4 +1,4 @@
-import createClient from '$lib/prismic'
+import createClient from '$lib/prismic';
 
 export async function get({ fetch }) {
   const client = createClient({ fetch })

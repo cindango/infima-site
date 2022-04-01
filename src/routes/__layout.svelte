@@ -69,7 +69,7 @@
 					<li><a>Company</a></li>
 					<li><a>Contact</a></li>
 					<li><a>Developer</a></li>
-					<li><a>Sign In</a></li>
+					<li><a href="https://infima.freshteam.com/jobs" target="_blank">Careers</a></li>
 				</ul>
 			</div>
 		</div>

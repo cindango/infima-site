@@ -33,11 +33,11 @@
     {#if slice.slice_type === "team"}
       <section class="container team">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-4 md:gap-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-y-8">
 
           {#each slice.items as person}
 
-          <div class="flex flex-row gap-3 person items-start">
+          <div class="flex flex-row gap-4 person items-start">
             <div class="headshot flex-none">
               <img src="{person.headshot.url}" />
             </div>
@@ -101,6 +101,7 @@
 
   .person {
     font-family: var(--font-condensed);
+    align-items: center;
   }
 
   .person strong {
