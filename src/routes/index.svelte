@@ -46,7 +46,7 @@
 			<div class="grid lg:grid-cols-3 gap-8 w-full">
 
 				{#each slice.items as product}
-					<a class="box" href="/{product.link.type}s/{product.link.uid}">
+					<a sveltekit:prefetch class="box" href="/{product.link.type}s/{product.link.uid}">
 						<img class="icon" src="{product.icon.url}" width="51.2" height="40" alt="{product.icon.alt}" />
 						<h4>{product.name}</h4>
 						<span class="sm:w-2/3 lg:w-full">{@html PrismicDom.RichText.asHtml(product.description)}</span>
@@ -72,7 +72,7 @@
 			<div class="grid md:grid-cols-2 gap-8 w-full">
 
 				{#each slice.items as solution}
-					<a class="box solution" href="/{solution.link.type}s/{solution.link.uid}" style="background-image: url({solution.background.url}&q=95);">
+					<a sveltekit:prefetch class="box solution" href="/{solution.link.type}s/{solution.link.uid}" style="background-image: url({solution.background.url}&q=95);">
 						<img class="icon" src="{solution.icon.url}" width="60" height="60" alt="{solution.icon.alt}" />
 						<h4>{solution.name}</h4>
 						<span class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(solution.description)}</span>
