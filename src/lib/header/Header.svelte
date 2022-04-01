@@ -96,7 +96,7 @@
 
 				<li>
 
-					<a href="/insights">
+					<a sveltekit:prefetch href="/insights">
 						Insights
 					</a>
 

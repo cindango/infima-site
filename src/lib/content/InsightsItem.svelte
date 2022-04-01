@@ -18,7 +18,7 @@
 	});
 </script>
 
-<a bind:this={insight} class="box" href="/{type}/{type === 'insights' ? category + '/' : ''}{post.fields.slug}">
+<a sveltekit:prefetch bind:this={insight} class="box" href="/{type}/{type === 'insights' ? category + '/' : ''}{post.fields.slug}">
   <span class="meow">
     {#if post.fields.category}
       {post.fields.category.replace(/-/g, ' ')}
