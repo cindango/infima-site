@@ -2,10 +2,12 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import logo from './InfimaLogo_Thin.svg';
-	export let document;
+	import MobileNav from './MobileNav.svelte';
 
 	let y;
 	let loaded = false;
+	let show_mobile_nav = false;
+
 	let navState = '';
 	let show = false;
 	let products = false;
@@ -126,12 +128,124 @@
 				</li>
 
 			</ul>
+
+			<ul class="mobile-toggle">
+				<button on:click={() => show_mobile_nav = !show_mobile_nav}>
+					<span class:close={show_mobile_nav} />
+					<span class:close={show_mobile_nav} />
+				</button>
+			</ul>
+
 		</nav>
 	{/if}
 	</div>
 </header>
 
+<MobileNav bind:show={show_mobile_nav} />
+
 <style>
+	.mobile-toggle {
+		display: block;
+	}
+	.mobile-toggle button {
+		display: block;
+		height: 100%;
+	}
+	.mobile-toggle button span {
+		display: block;
+		height: 1px;
+		width: 30px;
+		background: white;
+		margin: .5rem 0;
+		transition: transform .5s ease, margin .5s ease;
+	}
+	.mobile-toggle button span.close {
+		margin: 0;
+	}
+	.mobile-toggle button span.close:nth-child(1) {
+		transform: rotate(45deg);
+	}
+	.mobile-toggle button span.close:nth-child(2) {
+		transform: rotate(-45deg);
+		margin-top: -1px;
+	}
+	header {
+		display: flex;
+		justify-content: center;
+		position: fixed;
+		width: 100%;
+		z-index: 99;
+		transition: background-color .5s ease, backdrop-filter .5s ease, box-shadow .5s ease;
+
+	}
+	header.nav-s {
+		background-color: rgba(var(--background-color-rgb), .85);
+    backdrop-filter: saturate(180%) blur(20px);
+		transition-property: background-color, backdrop-filter;
+		transition: background-color 2s ease, backdrop-filter 3s ease;
+	}
+	header.expanded {
+		background-color: rgba(var(--background-color-rgb), .85);
+    backdrop-filter: saturate(180%) blur(20px);
+		transition-property: background-color, backdrop-filter;
+		transition: background-color 1s ease, backdrop-filter 1s ease, box-shadow .5s ease;
+		box-shadow: 0 0 20px black;
+	}
+	.i-logo {
+		opacity: 1;
+		transition: opacity .5s ease;
+	}
+	header.nav-s .i-logo {
+		opacity: .8;
+	}
+	.inner {
+		width: 100%;
+		max-width: 1600px;
+		padding: 1rem 1rem;
+	}
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	ul.links {
+		display: none;
+    justify-content: end;
+    gap: 30px;
+	}
+
+	li {
+		line-height: 100%;
+	}
+
+	header.nav-s nav a {
+		color: rgba(255,255,255,.75);
+	}
+
+	nav a {
+		height: 100%;
+		color: rgba(255,255,255,.9);
+		font-weight: 400;
+		font-size: 1rem;
+		letter-spacing: 0.04em;
+		text-decoration: none;
+		transition: color 0.25s linear;
+		text-transform: lowercase;
+	}
+
+	nav li:hover > a,
+	header.expanded:hover nav li.open > a,
+	header.expanded:hover nav li.open .dropdown a,
+	header.expanded:hover nav ul > li > a:hover {
+		opacity: 1;
+		color: rgba(255,255,255,1);
+	}
+
+	header.expanded:hover nav ul > li > a {
+		opacity: .5;
+	}
+
 	.links > li {
 		height: 24px;
 		min-height: 24px;
@@ -179,86 +293,16 @@
 		transition-delay: .25s;
 		height: auto;
 	}
-	header {
-		display: flex;
-		justify-content: center;
-		position: fixed;
-		width: 100%;
-		z-index: 99;
-		transition: background-color .5s ease, backdrop-filter .5s ease, box-shadow .5s ease;
-
-	}
-	header.nav-s {
-		background-color: rgba(var(--background-color-rgb), .85);
-    backdrop-filter: saturate(180%) blur(20px);
-		transition-property: background-color, backdrop-filter;
-		transition: background-color 2s ease, backdrop-filter 3s ease;
-	}
-	header.expanded {
-		background-color: rgba(var(--background-color-rgb), .85);
-    backdrop-filter: saturate(180%) blur(20px);
-		transition-property: background-color, backdrop-filter;
-		transition: background-color 1s ease, backdrop-filter 1s ease, box-shadow .5s ease;
-		box-shadow: 0 0 20px black;
-	}
-	.i-logo {
-		opacity: 1;
-		transition: opacity .5s ease;
-	}
-	header.nav-s .i-logo {
-		opacity: .8;
-	}
-	.inner {
-		width: 100%;
-		max-width: 1600px;
-		padding: 1rem 1rem;
-	}
-
-	nav {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	ul.links {
-		display: flex;
-    justify-content: end;
-    gap: 30px;
-	}
-
-	li {
-		line-height: 100%;
-	}
-
-	header.nav-s nav a {
-		color: rgba(255,255,255,.75);
-	}
-
-	nav a {
-		height: 100%;
-		color: rgba(255,255,255,.9);
-		font-weight: 400;
-		font-size: 1rem;
-		letter-spacing: 0.04em;
-		text-decoration: none;
-		transition: color 0.25s linear;
-		text-transform: lowercase;
-	}
-
-	nav li:hover > a,
-	header.expanded:hover nav li.open > a,
-	header.expanded:hover nav li.open .dropdown a,
-	header.expanded:hover nav ul > li > a:hover {
-		opacity: 1;
-		color: rgba(255,255,255,1);
-	}
-
-	header.expanded:hover nav ul > li > a {
-		opacity: .5;
-	}
 
 	@media (min-width:720px) {
 		.inner {
 			padding: 1.5rem 2rem;
+		}
+		.mobile-toggle {
+			display: none;
+		}
+		ul.links {
+			display: flex;
 		}
 	}
 </style>

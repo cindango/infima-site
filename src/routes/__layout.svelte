@@ -40,41 +40,41 @@
 				<div>
 					<strong>Products</strong>
 					<ul>
-						<li><a>Infima Platform</a></li>
-						<li><a>Infima Libraries</a></li>
-						<li><a>Infima APIs</a></li>
+						<li><a href="/products/infima-platform">Infima Platform</a></li>
+						<li><a href="/products/infima-libraries">Infima Libraries</a></li>
+						<li><a href="/products/infima-apis">Infima APIs</a></li>
 					</ul>
 				</div>
 				<div>
 					<strong>Solutions</strong>
 					<ul>
-						<li><a>Asset managers</a></li>
-						<li><a>Dealers</a></li>
+						<li><a href="/solutions/asset-managers">Asset managers</a></li>
+						<li><a href="/solutions/dealers">Dealers</a></li>
 					</ul>
 				</div>
 			</div>
 			<div>
 				<strong>Insights</strong>
 				<ul>
-					<li><a>News</li>
-					<li><a>Research Papers</a></li>
-					<li><a>Market Maps</a></li>
-					<li><a>White Papers</a></li>
+					<li><a href="/news">News</li>
+					<li><a href="">Research Papers</a></li>
+					<li><a href="">Market Maps</a></li>
+					<li><a href="">White Papers</a></li>
 				</ul>
 			</div>
 			<div>
 				<strong>About Us</strong>
 				<ul>
-					<li><a>Technology</a></li>
-					<li><a>Company</a></li>
-					<li><a>Contact</a></li>
-					<li><a>Developer</a></li>
+					<li><a href="/tech">Technology</a></li>
+					<li><a href="/about">Company</a></li>
+					<li><a href="/contact">Contact</a></li>
+					<li><a href="https://docs.infima.io" target="_blank">Developer</a></li>
 					<li><a href="https://infima.freshteam.com/jobs" target="_blank">Careers</a></li>
 				</ul>
 			</div>
 		</div>
-		<div class="copywright">
-			<div>© <Time timestamp="{new Date()}" format="YYYY" /> Infima. All Rights Reserved.</div><div><a>Terms of Use</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a>Privacy</a></div>
+		<div class="copywright flex-col sm:flex-row">
+			<div class="mr-6">© <Time timestamp="{new Date()}" format="YYYY" /> Infima. All Rights Reserved.</div><div><a href="">Terms of Use</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="">Privacy</a></div>
 		</div>
 </footer>
 
@@ -165,12 +165,6 @@
 		display: flex;
 		font-weight: 300;
 		letter-spacing: .03rem;
-	}
-
-	footer .copywright div:first-of-type {
-		border-right: 1px solid rgba(255,255,255,.2);
-		padding-right: 15px;
-		margin-right: 15px;
 	}
 
 	footer .copywright a {

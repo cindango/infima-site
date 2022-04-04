@@ -322,6 +322,11 @@ button:focus:not(:focus-visible) {
 	cursor: pointer;
 	line-height: 1;
 }
+
+.button span {
+	margin-right: -12px;
+}
+
 .button.text-btn {
   font-size: .9rem;
 }

@@ -119,7 +119,7 @@
   }
 
   .headshot {
-    background: #ddd;
+    background: #eee;
     border-radius: 3px;
   }
 
