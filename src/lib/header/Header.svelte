@@ -195,7 +195,7 @@
 		background-color: rgba(var(--background-color-rgb), .85);
     transition-delay: 1s;
 	}
-	header.mobile-open .i-logo {
+	header.mobile-open .i-logo, header.nav-s.mobile-open .i-logo {
 		opacity: 0;
 		transition-delay: 0s;
 		transition: opacity 0s ease;
