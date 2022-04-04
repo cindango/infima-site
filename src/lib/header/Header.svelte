@@ -44,7 +44,7 @@
 
 <svelte:window bind:scrollY={y}/>
 
-<header class={y > 50 ? "nav-s" : ""} class:expanded="{navState === 'expanded'}">
+<header class={y > 50 ? "nav-s" : ""} class:expanded="{navState === 'expanded'}" class:mobile-open={show_mobile_nav}>
 	<div class="inner">
 	{#if loaded}
 		<nav>
@@ -190,6 +190,15 @@
 		transition-property: background-color, backdrop-filter;
 		transition: background-color 1s ease, backdrop-filter 1s ease, box-shadow .5s ease;
 		box-shadow: 0 0 20px black;
+	}
+	header.mobile-open {
+		background-color: rgba(var(--background-color-rgb), .85);
+    transition-delay: 1s;
+	}
+	header.mobile-open .i-logo {
+		opacity: 0;
+		transition-delay: 0s;
+		transition: opacity 0s ease;
 	}
 	.i-logo {
 		opacity: 1;
