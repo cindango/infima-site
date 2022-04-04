@@ -4,7 +4,7 @@ export let show = false;
 </script>
 
 {#if show}
-  <nav class="mobile" transition:fade="{{ duration: 100 }}">
+  <nav class="mobile" in:fade="{{ duration: 100 }}" out:fade="{{ delay: 100, duration: 100 }}">
     <div class="nav-container">
       <ul>
         <li class="sub-menu products">
@@ -14,13 +14,13 @@ export let show = false;
             <div class="dropdown">
               <ul>
                 <li>
-                  <a href="/products/infima-platform">Infima Platform</a>
+                  <a href="/products/infima-platform" on:click={() => show = !show}>Infima Platform</a>
                 </li>
                 <li>
-                  <a href="/products/infima-libraries">Infima Libraries</a>
+                  <a href="/products/infima-libraries" on:click={() => show = !show}>Infima Libraries</a>
                 </li>
                 <li>
-                  <a href="/products/infima-apis">Infima APIs</a>
+                  <a href="/products/infima-apis" on:click={() => show = !show}>Infima APIs</a>
                 </li>
               </ul>
             </div>
@@ -34,10 +34,10 @@ export let show = false;
             <div class="dropdown">
               <ul>
                 <li>
-                  <a href="/solutions/asset-managers">Asset Managers</a>
+                  <a href="/solutions/asset-managers" on:click={() => show = !show}>Asset Managers</a>
                 </li>
                 <li>
-                  <a href="/solutions/dealers">Dealers</a>
+                  <a href="/solutions/dealers" on:click={() => show = !show}>Dealers</a>
                 </li>
               </ul>
             </div>
@@ -51,7 +51,7 @@ export let show = false;
             <div class="dropdown">
               <ul>
                 <li>
-                  <a href="/insights">Insights</a>
+                  <a href="/insights" on:click={() => show = !show}>Insights</a>
                 </li>
               </ul>
             </div>
@@ -65,10 +65,10 @@ export let show = false;
             <div class="dropdown">
               <ul>
                 <li>
-                  <a href="/about">About</a>
+                  <a href="/about" on:click={() => show = !show}>About</a>
                 </li>
                 <li>
-                  <a href="/news">News</a>
+                  <a href="/news" on:click={() => show = !show}>News</a>
                 </li>
               </ul>
             </div>
