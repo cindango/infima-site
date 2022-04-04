@@ -67,7 +67,7 @@
 				<ul>
 					<li><a href="/tech">Technology</a></li>
 					<li><a href="/about">Company</a></li>
-					<li><a href="/contact">Contact</a></li>
+					<li><a href="/">Contact</a></li>
 					<li><a href="https://docs.infima.io" target="_blank">Developer</a></li>
 					<li><a href="https://infima.freshteam.com/jobs" target="_blank">Careers</a></li>
 				</ul>
