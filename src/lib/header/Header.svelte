@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import logo from './InfimaLogo_Thin.svg';
 	import MobileNav from './MobileNav.svelte';
+	export let document;
 
 	let y;
 	let loaded = false;

@@ -1,9 +1,10 @@
 <script>
+import { fade } from 'svelte/transition';
 export let show = false;
 </script>
 
 {#if show}
-  <nav class="mobile">
+  <nav class="mobile" transition:fade="{{ duration: 100 }}">
     <div class="nav-container">
       <ul>
         <li class="sub-menu products">
