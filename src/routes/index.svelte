@@ -144,14 +144,15 @@
 		border-width: 1px;
 	}
 	:global(#splash h1) {
-		font-size: 2.5rem;
+		font-size: 2.25rem;
 		font-weight: 400;
 		letter-spacing: -.03rem;
 		line-height: 1.2;
 	}
 	#splash p {
-		font-size: 1.2rem;
+		font-size: 1.15rem;
 		max-width: 600px;
+		font-weight: 400;
 	}
 	.box .icon {
 		height: 40px;
@@ -184,6 +185,7 @@
 		}
 		#splash p {
 			font-size: 1.5rem;
+			font-weight: 300;
 		}
 		:global(#splash .button) {
 			border-width: 2px;
