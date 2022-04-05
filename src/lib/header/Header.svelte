@@ -15,7 +15,7 @@
 	let solutions = false;
 	let about = false;
 
-	$: if (browser) document.body.classList.toggle('overflow-hidden', show_mobile_nav);
+	$: if (browser) document.querySelector('body > div').classList.toggle('overflow-hidden', show_mobile_nav);
 
 	onMount(() => {
 		loaded = true;
@@ -147,6 +147,9 @@
 <MobileNav bind:show={show_mobile_nav} />
 
 <style>
+	:global(body > div.overflow-hidden) {
+		position: fixed;
+	}
 	.mobile-toggle {
 		display: block;
 	}

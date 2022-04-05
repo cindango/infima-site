@@ -324,7 +324,7 @@ button:focus:not(:focus-visible) {
 }
 
 .button span {
-	margin-right: -12px;
+	margin-right: -10px;
 }
 
 .button.text-btn {
