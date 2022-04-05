@@ -155,7 +155,8 @@
 		font-weight: 400;
 	}
 	.box .icon {
-		height: 40px;
+		height: 30px;
+		width: auto;
 	}
 	.box span {
 		letter-spacing: .04rem;
@@ -167,7 +168,7 @@
 		padding-bottom: 5rem;
 	}
 	.box.solution .icon {
-		height: 50px;
+		height: 45px;
 		width: auto;
 	}
 	.callout .section-head {
