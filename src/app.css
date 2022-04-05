@@ -344,7 +344,6 @@ button:focus:not(:focus-visible) {
 	border: 1px solid;
 	transition: background 1s ease, border .25s ease;
 	font-size: .9rem;
-	font-weight: 600;
 }
 
 .button.primary-btn.btn-filled, #request .hs-button.primary {
