@@ -106,7 +106,8 @@
 	}
 
 	footer .container {
-		padding: 8vh 1rem;
+		padding-top: 4rem;
+		padding-bottom: 4rem;
 	}
 
 	footer strong {

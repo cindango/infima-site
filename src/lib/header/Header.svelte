@@ -206,7 +206,7 @@
 	.inner {
 		width: 100%;
 		max-width: 1600px;
-		padding: .85rem 1rem;
+		padding: .85rem 1.25rem;
 	}
 
 	nav {

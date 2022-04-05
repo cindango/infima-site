@@ -162,7 +162,7 @@
 	.box.solution {
 		border: 0;
 		background-size: cover;
-		min-height: 375px;
+		min-height: 350px;
 		padding-bottom: 5rem;
 	}
 	.box.solution .icon {
