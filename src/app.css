@@ -61,7 +61,7 @@ body {
 }
 
 .container:last-child {
-	padding-bottom: 10rem;
+	padding-bottom: 8rem;
 }
 
 #heading > .container, #splash > .container {
@@ -104,12 +104,12 @@ h2 {
 }
 
 h3 {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	line-height: 1.45;
 }
 
 h4 {
-	font-size: 1.55rem;
+	font-size: 1.3rem;
 	font-weight: 400;
 }
 
@@ -320,7 +320,6 @@ button:focus:not(:focus-visible) {
 	font-weight: 500;
 	color: #fff;
 	cursor: pointer;
-	line-height: 1;
 }
 
 .button span {
@@ -328,7 +327,7 @@ button:focus:not(:focus-visible) {
 }
 
 .button.text-btn {
-  font-size: .9rem;
+  font-size: .8rem;
 	gap: 5px;
 }
 
@@ -345,10 +344,11 @@ button:focus:not(:focus-visible) {
 .button.primary-btn, .hs-button.primary {
 	border-radius: 2px;
 	margin-top: 20px;
-	padding: 10px 20px 12px;
+	padding: 6px 12px 8px;
 	border: 1px solid;
 	transition: background 1s ease, border .25s ease;
-	font-size: .95rem;
+	font-size: .9rem;
+	font-weight: 600;
 }
 
 .button.primary-btn.btn-filled, #request .hs-button.primary {
@@ -373,7 +373,7 @@ button:focus:not(:focus-visible) {
 }
 
 .box {
-	padding: 1.75rem;
+	padding: 1.5rem;
 	padding-bottom: 2rem;
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	border-left: 1px solid rgba(255, 255, 255, 0.9);
@@ -391,9 +391,13 @@ button:focus:not(:focus-visible) {
 	text-decoration: none;
 }
 
+.box .button.text-btn {
+	bottom: 1.5rem;
+}
+
 .section-head {
 	border-top: 1px solid rgba(255,255,255,.2);
-	padding-top: 1.5rem;
+	padding-top: 1.25rem;
 	padding-bottom: 4rem;
 	display: flex;
 	flex-direction: column;
@@ -401,7 +405,7 @@ button:focus:not(:focus-visible) {
 	gap: 3rem;
 }
 .section-head label h2 {
-	font-size: 1rem;
+	font-size: .95rem;
 	text-transform: uppercase;
 	letter-spacing: .1rem;
 	font-weight: 400;
@@ -481,8 +485,9 @@ button:focus:not(:focus-visible) {
 		border: 1px solid;
 		padding: 12px 20px 14px;
 		font-size: 1.1rem;
+		font-weight: 500;
 	}
-	.button.text-btn {
+	.box .button.text-btn {
     bottom: 2rem;
   }
   .button.text-btn {

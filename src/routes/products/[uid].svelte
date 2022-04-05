@@ -51,7 +51,9 @@
             <div class="product-feature lg:flex flex-col lg:flex-row lg:grid-cols-2 gap-16 lg:w-5/6">
               <div class="lg:w-1/3">
                 <h4>{product.title}</h4>
-                <p>{@html PrismicDom.RichText.asHtml(product.description)}</p>
+                {#if product.description.length > 0}
+                  {@html PrismicDom.RichText.asHtml(product.description)}
+                {/if}
               </div>
               <img class="lg:w-2/3 mt-10 lg:mt-0 product-image" src="{product.image.url}" />
             </div>
@@ -106,6 +108,9 @@
   #details .container {
     padding-top: 7vh;
   }
+  #section-head {
+    padding-bottom: 0;
+  }
   .product-featured-image {
     max-width: 1400px;
     margin: 0 auto;
@@ -131,7 +136,6 @@
   }
   :global(.product-feature p) {
     color: rgba(255,255,255,.7);
-    padding: 0 5%;
   }
   .feature {
 		display: flex;
