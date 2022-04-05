@@ -90,7 +90,7 @@ export let show = false;
 	  left:0;
     bottom:0;
     right: 0;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   nav.mobile.closed {
@@ -106,12 +106,12 @@ export let show = false;
     right: 0;
     background-color: rgba(var(--background-color-rgb), 1);
     padding: 0 3rem;
-    padding-top: 2.5rem;
+    padding-top: 3rem;
   }
 
   nav.mobile .nav-container > ul > li {
     width: 100%;
-    margin: 2rem 0;
+    margin: 1.25rem 0;
   }
 
   nav.mobile .nav-container > ul > li li {
@@ -136,7 +136,7 @@ export let show = false;
 
   a {
     color: #fff;
-    padding: .7rem 0 .8rem;
+    padding: .65rem 0 .8rem;
     display: inline-block;
     width: 100%;
     text-decoration: none;
