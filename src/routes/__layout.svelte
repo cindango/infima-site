@@ -9,6 +9,7 @@
 	import '@fontsource/barlow-semi-condensed/500.css';
 	import logo from './../lib/header/InfimaLogo_Thin.svg';
 	import Time from "svelte-time";
+	import { goto } from '$app/navigation';
 </script>
 
 <Header />
@@ -56,10 +57,10 @@
 			<div>
 				<strong>Insights</strong>
 				<ul>
-					<li><a href="/news">News</li>
-					<li><a href="">Research Papers</a></li>
-					<li><a href="">Market Maps</a></li>
-					<li><a href="">White Papers</a></li>
+					<li><a rel="external" href="/insights">All Insights</a></li>
+					<li><a rel="external" href="/insights?category=research-paper">Research Papers</a></li>
+					<li><a rel="external" href="/insights?category=market-map">Market Maps</a></li>
+					<li><a rel="external" href="/insights?category=white-paper">White Papers</a></li>
 				</ul>
 			</div>
 			<div>
@@ -67,6 +68,7 @@
 				<ul>
 					<li><a href="/tech">Technology</a></li>
 					<li><a href="/about">Company</a></li>
+					<li><a href="/news">News</li>
 					<li><a href="/">Contact</a></li>
 					<li><a href="https://docs.infima.io" target="_blank">Developer</a></li>
 					<li><a href="https://infima.freshteam.com/jobs" target="_blank">Careers</a></li>

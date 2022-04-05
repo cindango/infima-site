@@ -15,7 +15,7 @@
 	let solutions = false;
 	let about = false;
 
-	$: if (browser) document.querySelector('body > div').classList.toggle('overflow-hidden', show_mobile_nav);
+	$: if (browser) document.querySelector('body > div').classList.toggle('no-scroll', show_mobile_nav);
 
 	onMount(() => {
 		loaded = true;
@@ -147,9 +147,6 @@
 <MobileNav bind:show={show_mobile_nav} />
 
 <style>
-	:global(body > div.overflow-hidden) {
-		position: fixed;
-	}
 	.mobile-toggle {
 		display: block;
 	}
@@ -196,10 +193,6 @@
 		transition-property: background-color, backdrop-filter;
 		transition: background-color 1s ease, backdrop-filter 1s ease, box-shadow .5s ease;
 		box-shadow: 0 0 20px black;
-	}
-	header.mobile-open {
-		background-color: rgba(var(--background-color-rgb), .85);
-    transition-delay: 1s;
 	}
 	.i-logo {
 		opacity: 1;
@@ -313,6 +306,16 @@
 		}
 		ul.links {
 			display: flex;
+		}
+	}
+	@media (max-width:720px) {
+		header.mobile-open {
+			background-color: rgba(var(--background-color-rgb), .85);
+	    transition-delay: 1s;
+		}
+		:global(body > div.no-scroll) {
+			position: fixed;
+			overflow: hidden;
 		}
 	}
 </style>

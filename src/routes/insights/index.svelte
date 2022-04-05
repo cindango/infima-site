@@ -14,11 +14,20 @@
 
 <script>
   import { page } from '$app/stores';
-  //category = $page.url.searchParams.get('category');
+  import { goto } from '$app/navigation';
+
+  let filter = '';
+  filter = $page.url.searchParams.get('category');
   export let insights;
   let value = '';
   let selected;
-  let category = '';
+  let category;
+
+  if ($page.url.searchParams.get('category') != undefined) {
+    category = filter;
+  } else {
+    category = '';
+  }
 
 </script>
 
@@ -29,7 +38,7 @@
     <h1 class="w-1/2 lg:w-1/3">Insights</h1>
 
     <div class="categories w-1/2 lg:w-2/3">
-      <select bind:value={selected} class="mobile-categories">
+      <select bind:value={category} class="mobile-categories">
         <option value={''}>
           All Categories
         </option>
@@ -45,16 +54,16 @@
       </select>
 
       <input id="all" type=radio bind:group={category} name="category" value={''}>
-        <label for="all"><p>All</p></label>
+        <label for="all" on:click={() => goto('/insights')}><p>All</p></label>
 
       <input id="mm" type=radio bind:group={category} name="category" value={'market-map'}>
-        <label for="mm"><p>Market Maps</p></label>
+        <label for="mm" on:click={() => goto('/insights?category=market-map')}><p>Market Maps</p></label>
 
       <input id="rp" type=radio bind:group={category} name="category" value={'research-paper'}>
-        <label for="rp"><p>Research Papers</p></label>
+        <label for="rp" on:click={() => goto('/insights?category=research-paper')}><p>Research Papers</p></label>
 
       <input id="wp" type=radio bind:group={category} name="category" value={'white-paper'}>
-        <label for="wp"><p>White Papers</p></label>
+        <label for="wp" on:click={() => goto('/insights?category=white-paper')}><p>White Papers</p></label>
 
     </div>
 
