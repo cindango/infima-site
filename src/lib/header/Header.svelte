@@ -177,6 +177,7 @@
 		display: flex;
 		justify-content: center;
 		position: fixed;
+		top: 0;
 		width: 100%;
 		z-index: 99;
 		transition: background-color .5s ease, backdrop-filter .5s ease, box-shadow .5s ease;
