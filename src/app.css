@@ -110,7 +110,7 @@ h3 {
 
 h4 {
 	font-size: 1.3rem;
-	font-weight: 400;
+	font-weight: 500;
 }
 
 pre {
@@ -314,7 +314,7 @@ button:focus:not(:focus-visible) {
 .button, .hs-button.primary {
 	text-transform: uppercase;
 	text-decoration: none;
-	letter-spacing: .05rem;
+	letter-spacing: .03rem;
 	display: flex;
 	align-items: center;
 	font-weight: 500;
@@ -322,22 +322,18 @@ button:focus:not(:focus-visible) {
 	cursor: pointer;
 }
 
+.button.text-btn {
+  font-size: .8rem;
+}
+
 .button span {
 	margin-right: -10px;
 }
 
-.button.text-btn {
-  font-size: .8rem;
-	gap: 5px;
+.button span, .button.text-btn span {
+	font-size: 20px;
 }
 
-.button.text-btn span {
-	font-size: 22px;
-}
-
-.button.text-btn img {
-  width: 7px;
-}
 .button:hover {
 	text-decoration: none;
 }
@@ -389,10 +385,6 @@ button:focus:not(:focus-visible) {
 	border: 1px solid rgba(255, 255, 255, 1);
 	box-shadow: 15px 15px 30px rgba(236,117,255,.2);
 	text-decoration: none;
-}
-
-.box .button.text-btn {
-	bottom: 1.5rem;
 }
 
 .section-head {
@@ -472,6 +464,7 @@ button:focus:not(:focus-visible) {
 	}
 	h4 {
 		font-size: 1.9rem;
+		font-weight: 400;
 	}
 	body {
 		font-size: 1.15rem;
@@ -493,5 +486,8 @@ button:focus:not(:focus-visible) {
   .button.text-btn {
     font-size: .9rem;
   }
+	.button span, .button.text-btn span {
+		font-size: 22px;
+	}
 
 }

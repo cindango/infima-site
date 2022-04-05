@@ -141,7 +141,7 @@
 		align-items: baseline;
 	}
 	:global(#splash .button) {
-		border-width: 2px;
+		border-width: 1px;
 	}
 	:global(#splash h1) {
 		font-size: 2.5rem;
@@ -165,7 +165,8 @@
 		padding-bottom: 5rem;
 	}
 	.box.solution .icon {
-		height: 60px;
+		height: 50px;
+		width: auto;
 	}
 	.callout .section-head {
 		padding-bottom: 0;
@@ -183,10 +184,19 @@
 		#splash p {
 			font-size: 1.5rem;
 		}
+		:global(#splash .button) {
+			border-width: 2px;
+		}
 		.box.solution {
 			border: 0;
 			background-size: cover;
 			min-height: 450px;
+		}
+		.box .icon {
+			height: 40px;
+		}
+		.box.solution .icon {
+			height: 60px;
 		}
 	}
 

@@ -58,7 +58,7 @@
 					}
 	      }
 			});
-	  }, 100);
+	  }, 300);
 	});
 </script>
 
@@ -98,8 +98,8 @@
 		<div class="w-full lg:w-1/3">
 			<h4>Request Download</h4>
 			{#if visible}
-				<div id="request" in:fade="{{delay: 150}}"></div>
-				<div class="form-consent mt-8" in:fade="{{delay: 300}}">
+				<div id="request" in:fade></div>
+				<div class="form-consent mt-8" in:fade="{{delay: 150}}">
 					<p>Infima Technologies, Inc. is committed to protecting and respecting your privacy, and we’ll only use your personal information to administer your account and to provide the products and services you requested from us. From time to time, we would like to contact you about our products and services, as well as other content that may be of interest to you. If you consent to us contacting you for this purpose, please tick above to say how you would like us to contact you.</p>
 					<p>You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy.</p>
 					<p>By clicking submit below, you consent to allow infima.io to store and process the personal information submitted above to provide you the content requested.</p>

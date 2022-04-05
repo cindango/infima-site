@@ -31,7 +31,7 @@
             <div class="lg:w-2/5">
               <h4>{product.title}</h4>
               {@html PrismicDom.RichText.asHtml(product.description)}
-							{#if product.link.url}<a href="{product.link.url}" class="button text-btn">{product.link_text} <img src="/RightArrow.svg" /></a>{/if}
+							{#if product.link.url}<a href="{product.link.url}" class="button text-btn">{product.link_text} <span class="icon-chevron_right"></span></a>{/if}
             </div>
             <img class="lg:w-3/5 pt-10 lg:pt-0 product-image" src="{product.image.url}&q=100" />
           </div>
