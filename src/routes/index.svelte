@@ -149,7 +149,7 @@
 		letter-spacing: -.03rem;
 		line-height: 1.2;
 	}
-	#splash p {
+	:global(#splash p) {
 		font-size: 1.15rem;
 		max-width: 600px;
 		font-weight: 400;
