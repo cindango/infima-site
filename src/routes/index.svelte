@@ -147,6 +147,7 @@
 		font-size: 2.5rem;
 		font-weight: 400;
 		letter-spacing: -.03rem;
+		line-height: 1.2;
 	}
 	#splash p {
 		font-size: 1.2rem;
