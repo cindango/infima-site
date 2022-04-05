@@ -114,6 +114,7 @@
   }
   select {
     color: #fff;
+    min-width: 175px;
   }
   @media (min-width:1024px) {
     h1 {
