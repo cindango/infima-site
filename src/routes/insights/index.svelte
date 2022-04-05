@@ -33,11 +33,11 @@
 
 <section class="container">
 
-  <div class="header flex flex-row">
+  <div class="header flex flex-row justify-between">
 
-    <h1 class="w-1/2 lg:w-1/3">Insights</h1>
+    <h1 class="w-auto lg:w-1/3">Insights</h1>
 
-    <div class="categories w-1/2 lg:w-2/3">
+    <div class="categories w-auto lg:w-2/3">
       <select bind:value={category} class="mobile-categories">
         <option value={''}>
           All Categories
