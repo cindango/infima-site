@@ -39,8 +39,6 @@
   }
   .box {
     gap: 30px;
-  }
-  h4 {
-    padding-right: 5%;
+    overflow-x: auto;
   }
 </style>
