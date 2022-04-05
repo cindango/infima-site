@@ -329,6 +329,7 @@ button:focus:not(:focus-visible) {
 
 .button.text-btn {
   font-size: .9rem;
+	gap: 5px;
 }
 
 .button.text-btn span {
@@ -392,12 +393,12 @@ button:focus:not(:focus-visible) {
 
 .section-head {
 	border-top: 1px solid rgba(255,255,255,.2);
-	padding-top: 2rem;
-	padding-bottom: 8rem;
+	padding-top: 1.5rem;
+	padding-bottom: 4rem;
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;
-	gap: 9vh;
+	gap: 3rem;
 }
 .section-head label h2 {
 	font-size: 1rem;
@@ -448,6 +449,14 @@ button:focus:not(:focus-visible) {
 	#heading > .container, #splash > .container {
 		padding-bottom: 8rem;
 	}
+	.section-head {
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+    gap: 4rem;
+	}
+	.section-head label h2 {
+		font-size: 1.15rem;
+	}
 	h1 {
 		font-size: 4.25rem;
 	}
@@ -479,8 +488,5 @@ button:focus:not(:focus-visible) {
   .button.text-btn {
     font-size: .9rem;
   }
-	.section-head label h2 {
-		font-size: 1.15rem;
-	}
 
 }

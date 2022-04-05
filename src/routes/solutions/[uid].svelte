@@ -61,6 +61,9 @@
 	#heading h1 {
 		font-weight: 400;
 	}
+	#heading p {
+		padding-right: 1rem;
+	}
 	#heading .container > div {
 		display: flex;
 		gap: 20px;
@@ -86,6 +89,7 @@
 		#heading p {
 			font-size: 1.5rem;
 			max-width: 720px;
+			padding-right: 0;
 		}
 		.feature p {
 			width: 90%;

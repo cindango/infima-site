@@ -52,7 +52,10 @@
 		padding-top: 7vh;
 	}
 	.heading {
-		margin: 5rem 0;
+		margin: 3rem 0;
+	}
+	h1 {
+		font-size: 1.8rem;
 	}
 	.heading .meow {
 		color: #fff;
@@ -70,6 +73,9 @@
 		font-size: 1rem;
 	}
 	@media (min-width:720px) {
+		.heading {
+			margin: 5rem 0;
+		}
 		h1 {
 			font-size: 4rem;
 		}

@@ -105,22 +105,22 @@
 {/each}
 
 <section class="container">
-		<div class="section-head">
-			<label><h2>News + Insights</h2></label>
-			{#await promise}
-			{:then insights}
-				<div class="grid lg:grid-cols-3 gap-8 w-full" in:fade>
-					{#each insights.items as insight}
-						{#if insight.fields.featured === true}
-				    	<InsightsItem post={insight} category={insight.fields.category} type={insight.sys.contentType.sys.id} />
-						{/if}
-					{/each}
-				</div>
-			{:catch err}
-				<h2>Error while loading the data</h2>
-			{/await}
+	<div class="section-head">
+		<label><h2>News + Insights</h2></label>
+	</div>
+	{#await promise}
+	{:then insights}
+		<div class="grid lg:grid-cols-3 gap-8 w-full" in:fade>
+			{#each insights.items as insight}
+				{#if insight.fields.featured === true}
+					<InsightsItem post={insight} category={insight.fields.category} type={insight.sys.contentType.sys.id} />
+				{/if}
+			{/each}
 		</div>
-	</section>
+	{:catch err}
+		<h2>Error while loading the data</h2>
+	{/await}
+</section>
 
 <style>
 	#loading {

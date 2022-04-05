@@ -14,7 +14,7 @@
 	let heading;
 
 	onMount(() => {
-		const typeMateInstance = new TypeMate(heading);
+		const typeMateInstance = new TypeMate(heading, { selector: 'h1,p' });
 		typeMateInstance.apply();
 	});
 </script>
@@ -100,6 +100,9 @@
     text-align: center;
     align-items: center;
   }
+  #heading p {
+    padding: 0 1rem;
+  }
   #details .container {
     padding-top: 7vh;
   }
@@ -112,7 +115,7 @@
   }
   .product-feature {
     align-items: center;
-    padding: 14vh 0;
+    padding: 7vh 0;
     margin: 0 auto;
   }
   .product-feature > div {
@@ -128,6 +131,7 @@
   }
   :global(.product-feature p) {
     color: rgba(255,255,255,.7);
+    padding: 0 5%;
   }
   .feature {
 		display: flex;
@@ -165,6 +169,9 @@
     #heading p {
       font-size: 1.5rem;
       max-width: 720px;
+    }
+    .product-feature {
+      padding: 14vh 0;
     }
     .product-feature h4 {
       font-size: 2.4rem;
