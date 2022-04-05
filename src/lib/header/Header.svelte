@@ -149,6 +149,7 @@
 <style>
 	.mobile-toggle {
 		display: block;
+		height: 26px;
 	}
 	.mobile-toggle button {
 		display: block;
@@ -197,6 +198,7 @@
 	.i-logo {
 		opacity: 1;
 		transition: opacity .5s ease;
+		width: 6rem;
 	}
 	header.nav-s .i-logo {
 		opacity: .8;
@@ -204,12 +206,13 @@
 	.inner {
 		width: 100%;
 		max-width: 1600px;
-		padding: 1rem 1rem;
+		padding: .85rem 1rem;
 	}
 
 	nav {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 	}
 
 	ul.links {
@@ -298,6 +301,9 @@
 	}
 
 	@media (min-width:720px) {
+		.i-logo {
+			width: 7rem;
+		}
 		.inner {
 			padding: 1.5rem 2rem;
 		}

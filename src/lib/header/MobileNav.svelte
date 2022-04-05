@@ -105,7 +105,7 @@ export let show = false;
     bottom:0;
     right: 0;
     background-color: rgba(var(--background-color-rgb), 1);
-    padding: 0 3rem;
+    padding: 0 2.8rem;
     padding-top: 3rem;
   }
 
