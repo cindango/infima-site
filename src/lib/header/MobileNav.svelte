@@ -90,8 +90,7 @@ export let show = false;
 	  left:0;
     bottom:0;
     right: 0;
-    font-size: 1.25rem;
-    letter-spacing: .03rem;
+    font-size: 1.15rem;
   }
 
   nav.mobile.closed {
@@ -106,19 +105,18 @@ export let show = false;
     bottom:0;
     right: 0;
     background-color: rgba(var(--background-color-rgb), 1);
-    padding: 1rem;
-    padding-top: 2rem;
+    padding: 0 3rem;
+    padding-top: 2.5rem;
   }
 
   nav.mobile .nav-container > ul > li {
     width: 100%;
-    margin: 4rem 0;
+    margin: 2rem 0;
   }
 
   nav.mobile .nav-container > ul > li li {
     border-top: 1px solid;
     border-color: rgba(255,255,255,.15);
-    padding: .5rem 0;
   }
 
   nav.mobile .nav-container > ul > li li:last-child {
@@ -127,17 +125,23 @@ export let show = false;
   }
 
   span {
-    border-top: 1px solid rgba(255,255,255,.9);
     width: 100%;
     color: rgba(255,255,255,.5);
     padding: .5rem 0;
     display: inline-block;
     text-transform: lowercase;
     font-size: 1rem;
+    letter-spacing: .03rem;
   }
 
   a {
     color: #fff;
+    padding: .7rem 0 .8rem;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    line-height: 1;
+    letter-spacing: .02rem;
   }
 
   @media (min-width:720px) {

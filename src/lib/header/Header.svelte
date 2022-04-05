@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import logo from './InfimaLogo_Thin.svg';
 	import MobileNav from './MobileNav.svelte';
+	import { browser } from '$app/env';
 
 	let y;
 	let loaded = false;
@@ -13,6 +14,8 @@
 	let products = false;
 	let solutions = false;
 	let about = false;
+
+	$: if (browser) document.body.classList.toggle('overflow-hidden', show_mobile_nav);
 
 	onMount(() => {
 		loaded = true;
@@ -194,11 +197,6 @@
 	header.mobile-open {
 		background-color: rgba(var(--background-color-rgb), .85);
     transition-delay: 1s;
-	}
-	header.mobile-open .i-logo, header.nav-s.mobile-open .i-logo {
-		opacity: 0;
-		transition-delay: 0s;
-		transition: opacity 0s ease;
 	}
 	.i-logo {
 		opacity: 1;
