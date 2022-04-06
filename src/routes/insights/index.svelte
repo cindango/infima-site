@@ -86,7 +86,7 @@
 <style>
   .header {
     align-items: center;
-    padding-bottom: 6vh;
+    padding-bottom: 3.5rem;
   }
   .categories {
     display: flex;

@@ -32,8 +32,8 @@
 				<ul>
 					<li>One Franklin Parkway, Bldg 930</li>
 					<li>San Mateo, CA 94403</li>
-					<li>(650) 240 4950</li>
-					<li>info@infima.io</li>
+					<li><a href="tel:650-240-4950">650.240.4950</a></li>
+					<li><a href="mailto:info@infima.io">info@infima.io</a></li>
 					<li><a href="https://www.linkedin.com/company/infima1/" target="_blank"><img src="/Icon_LinkedIn.svg" alt="LinkedIn" width="20" height="20" /></a>
 				</ul>
 			</div>
@@ -155,8 +155,13 @@
 		font-weight: 300;
 	}
 
-	footer li a {
+	footer a {
 		color: rgba(255,255,255,.8);
+		text-decoration: none;
+	}
+
+	footer a:hover {
+		color: rgba(255,255,255,1);
 	}
 
 	footer .copywright {
@@ -168,15 +173,6 @@
 		display: flex;
 		font-weight: 300;
 		letter-spacing: .03rem;
-	}
-
-	footer .copywright a {
-		color: rgba(255,255,255,.8);
-		text-decoration: none;
-	}
-
-	footer .copywright a:hover {
-		color: rgba(255,255,255,1);
 	}
 
 	.button.primary-btn:hover {

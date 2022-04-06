@@ -41,4 +41,7 @@
     gap: 30px;
     overflow-x: auto;
   }
+  h4 {
+    width: 90%;
+  }
 </style>
