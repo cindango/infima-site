@@ -46,6 +46,11 @@
   resolved "https://registry.npmjs.org/@fontsource/barlow/-/barlow-4.5.6.tgz"
   integrity sha512-T7ixL3eNfxSv0Gqo1/kCIQQdv1t3+FwbEEt6ug7or/OArKDO7NBo6OGfv/7J1cYS6cDDLkaYETPsiJCja5lFcQ==
 
+"@fontsource/epilogue@^4.5.7":
+  version "4.5.7"
+  resolved "https://registry.yarnpkg.com/@fontsource/epilogue/-/epilogue-4.5.7.tgz#95126d4ce649c4d3083aa82c643f4bfe2ebb45db"
+  integrity sha512-tfGpDia6K+Uwj2+u3TOYamaYyvkakMuB9SNtGrjiRMtfGSsxZFpY7SHGI9ar6O7q4Y8INIzQDIL3wD1YwuJbAA==
+
 "@fontsource/material-icons@^4.5.4":
   version "4.5.4"
   resolved "https://registry.yarnpkg.com/@fontsource/material-icons/-/material-icons-4.5.4.tgz#bfedde9352c36dbbacb6b49d190a1ce1e5917756"

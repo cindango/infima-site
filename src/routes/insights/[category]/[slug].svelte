@@ -34,7 +34,9 @@
 
 	onMount(() => {
 		const typeMateInstance = new TypeMate(heading, { selector: 'h1' });
-		typeMateInstance.apply();
+		if (outerWidth > 720) {
+			typeMateInstance.apply();
+		}
 	});
 
 	let downloadAllow = insights_entry.fields.allowDownload;
@@ -60,7 +62,11 @@
 			});
 	  }, 300);
 	});
+	$: outerWidth = 0;
+	$: innerWidth = 0;
 </script>
+
+<svelte:window bind:innerWidth bind:outerWidth />
 
 <svelte:head>
 <script async charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
@@ -76,7 +82,6 @@
 			<div bind:this={heading} class="heading flex flex-col gap-8 items-start">
 
 				<span class="meow">{insights_entry.fields.category.replace(/-/g, ' ')}</span>
-
 				<h1>{insights_entry.fields.title}</h1>
 
 				{#if insights_entry.fields.contributors}

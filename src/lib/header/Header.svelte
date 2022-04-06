@@ -213,7 +213,6 @@
 	nav {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
 	}
 
 	ul.links {
@@ -316,6 +315,9 @@
 		}
 	}
 	@media (max-width:720px) {
+		nav {
+			align-items: center;
+		}
 		header.mobile-open {
 			background-color: rgba(var(--background-color-rgb), .85);
 	    transition-delay: 1s;

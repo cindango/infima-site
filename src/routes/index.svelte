@@ -184,7 +184,7 @@
 		:global(#splash h1) {
 			font-size: 4.25rem;
 		}
-		#splash p {
+		:global(#splash p) {
 			font-size: 1.5rem;
 			font-weight: 300;
 		}
