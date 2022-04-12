@@ -63,30 +63,6 @@
 
     {/if}
 
-		{#if slice.slice_type === "text_with_code_samples"}
-
-      <div class="container">
-        <div class="section-head">
-        </div>
-        <div>
-          {#each slice.items as product}
-            <div class="product-feature lg:flex flex-col lg:flex-row lg:grid-cols-2 gap-16 lg:w-5/6">
-              <div class="lg:w-1/3">
-                <h4>{product.title}</h4>
-                {#if product.description.length > 0}
-                  {@html PrismicDom.RichText.asHtml(product.description)}
-                {/if}
-              </div>
-              <div class="lg:w-2/3 mt-10 lg:mt-0 code">
-								{@html PrismicDom.RichText.asHtml(product.code)}
-							</div>
-            </div>
-          {/each}
-        </div>
-      </div>
-
-    {/if}
-
     {#if slice.slice_type === "features"}
 
       <div class="container">
@@ -151,9 +127,6 @@
     display: flex;
     gap: 20px;
     flex-direction: column;
-  }
-  .product-feature img.product-image {
-    border: 1px solid rgba(255,255,255,.3);
   }
   .product-feature:nth-child(2n) {
     flex-direction: row-reverse;
