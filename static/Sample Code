@@ -1,0 +1,77 @@
+"pools": [
+  {
+    "cusip": "3140QGQN0",
+    "poolNumber": "CA8560",
+    "product": "FACL",
+    "agency": "FNM",
+    "prefix": "CL",
+    "agencyTicker": "FNM",
+    "couponType": "Fixed",
+    "issueDate": {
+      "year": 2020,
+      "month": 12,
+      "day": 0
+    },
+    "maturityDate": {
+      "year": 2051,
+      "month": 01,
+      "day": 0
+    },
+    "issUpb": 68,521,323,
+    "upb": 63,384,799,
+    "coupon": 1.5,
+    "factor": 0.925,
+    "wac": 2.43,
+    "wala": 15,
+    "issWac": 2.43,
+    "issWala": 15,
+    ...
+  }
+]
+
+{
+  "name": "FNCL 2.5 2021",
+  "ticker": "FNCL",
+  "coupon": 2.5,
+  "vintage": 2021,
+  "type": "string",
+  "numPools": 13,825,
+  "numLoans": 2,442,198,
+  "averageWac": 3.24,
+  "upb": 646,751,309,313,
+  "issUpb": 687,424,392,192,
+  "averageSecurityFactor": 0.9429,
+  "averageRefi": 54.45,
+  "averageLtv": 75.03,
+  "averageFico": 742.59,
+  "averageAols": 0342,093,
+  "averageLs": 306,170,
+  "averageWam": 0,
+  "averageWala": 0
+}
+
+"predictions": [
+  {
+    "symbol": "FNCL 2.5 2021",
+    "scenario": "BASELINE",
+    "asOf": {
+      "year": 2022,
+      "month": 03,
+      "day": 0
+  	},
+  	"values": [
+      {
+      	"period": {
+          "year": 2022,
+          "month": 04
+      },
+        "ahead": "NONE",
+        "smm": .006,
+        "smmLow": .07,
+        ...
+      }
+    ],
+    "model": "All",
+    "numComponents": 0
+  }
+]
