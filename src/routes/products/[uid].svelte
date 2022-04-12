@@ -159,7 +159,7 @@
     flex-direction: row-reverse;
   }
 	.product-feature .code {
-		height: 420px;
+		height: 450px;
 	}
 	:global(.product-feature .code pre) {
 		padding: 1rem;
