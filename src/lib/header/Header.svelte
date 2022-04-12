@@ -262,11 +262,13 @@
 		line-height: 1.2;
 	}
 	.links > li > a span {
-		vertical-align: bottom;
 		opacity: .9;
 		font-size: 18px;
 		margin-left: -2px;
     margin-bottom: -1px;
+	}
+	.links > li > a span:before {
+		vertical-align: bottom;
 	}
 	.dropdown {
 		position: absolute;
