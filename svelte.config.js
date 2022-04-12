@@ -9,11 +9,6 @@ const config = {
 		methodOverride: {
 			allowed: ['PATCH', 'DELETE']
 		},
-		vite: {
-      optimizeDeps: {
-        include: ["highlight.js", "highlight.js/lib/core"],
-      },
-    }
 	}
 };
 
