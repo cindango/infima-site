@@ -76,7 +76,7 @@
 			</div>
 		</div>
 		<div class="copywright flex-col sm:flex-row">
-			<div class="mr-6">© <Time timestamp="{new Date()}" format="YYYY" /> Infima. All Rights Reserved.</div><div><a href="">Terms of Use</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="">Privacy</a></div>
+			<div class="mr-6">© <Time timestamp="{new Date()}" format="YYYY" /> Infima. All Rights Reserved.</div><div><a href="/terms">Terms of Use</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="/privacy">Privacy</a></div>
 		</div>
 </footer>
 

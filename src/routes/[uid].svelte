@@ -1,50 +1,66 @@
 <script context="module">
 	export const prerender = true;
 	import PrismicDom from 'prismic-dom';
-	import TextButton from './../lib/buttons/TextButton.svelte';
 </script>
 
 <script>
 	import * as prismicH from '@prismicio/helpers';
+	import TextButton from './../lib/buttons/TextButton.svelte';
+	import Body from './../lib/content/Body.svelte';
 	export let document;
 </script>
 
-<section id="heading" style="background-image: url('{document.data.header_image.url}');">
-	<div id="gradient" />
+<section id="heading" class={document.data.header_image.url ? "header-full" : "header-normal"} style={document.data.header_image.url ? "background-image: url(" + document.data.header_image.url + ")" : ""}>
+	{#if document.data.header_image.url}
+		<div id="gradient" />
+	{/if}
   <div class="container">
     <div class="lg:w-full xl:w-1/2">
 			<h1>{document.data.title[0].text}</h1>
-			<p>{document.data.short_description}</p>
+			{#if document.data.short_description}
+				<p>{document.data.short_description}</p>
+			{/if}
     </div>
   </div>
 </section>
 
-<section id="content" class="{document.uid}">
-	{#each document.data.body as slice}
+{#if document.data.content}
+	<section id="content" class="container text {document.uid}">
+		{@html PrismicDom.RichText.asHtml(document.data.content)}
+	</section>
+{/if}
 
-    {#if slice.slice_type === "product_images"}
+{#if document.data.body.length > 0}
 
-      <div class="container">
+	<section id="content" class="{document.uid}">
 
-        {#each slice.items as product}
-          <div class="product-feature lg:flex flex-col lg:flex-row lg:grid-cols-2 gap-16 lg:w-full xl:w-5/6">
-            <div class="lg:w-2/5">
-              <h4>{product.title}</h4>
-              {@html PrismicDom.RichText.asHtml(product.description)}
-							{#if product.link.url}<a href="{product.link.url}" class="button text-btn">{product.link_text} <span class="icon-chevron_right"></span></a>{/if}
-            </div>
-            <img class="lg:w-3/5 pt-10 lg:pt-0 product-image" src="{product.image.url}&q=100" />
-          </div>
-        {/each}
-      </div>
+		{#each document.data.body as slice}
 
-    {/if}
+	    {#if slice.slice_type === "product_images"}
 
-	{/each}
-</section>
+	      <div class="container">
+
+	        {#each slice.items as product}
+	          <div class="product-feature lg:flex flex-col lg:flex-row lg:grid-cols-2 gap-16 lg:w-full xl:w-5/6">
+	            <div class="lg:w-2/5">
+	              <h4>{product.title}</h4>
+	              {@html PrismicDom.RichText.asHtml(product.description)}
+								{#if product.link.url}<a href="{product.link.url}" class="button text-btn">{product.link_text} <span class="icon-chevron_right"></span></a>{/if}
+	            </div>
+	            <img class="lg:w-3/5 pt-10 lg:pt-0 product-image" src="{product.image.url}&q=100" />
+	          </div>
+	        {/each}
+	      </div>
+
+	    {/if}
+
+		{/each}
+	</section>
+
+{/if}
 
 <style>
-  #heading {
+  #heading.header-full {
 		height: 100vh;
 		min-height: 700px;
     padding: 0vh 0 0;
@@ -63,26 +79,50 @@
     position: absolute;
 		top: 0;
 	}
-  #heading .container {
+  #heading.header-full .container {
     align-items: center;
 		z-index: 1;
   }
-  #heading .container > div {
+  #heading.header-full .container > div {
     display: flex;
     gap: 20px;
     flex-direction: column;
     text-align: center;
     align-items: center;
   }
+	#heading.header-normal .container {
+		padding-bottom: 2rem;
+	}
+	#heading.header-normal .container, #content.text {
+		max-width: 56rem;
+	}
   #content .container {
     padding-top: 10vh;
   }
+	:global(#content h2), :global(#content h3), :global(#content h4) {
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+	:global(#content.text p) {
+		margin: .5rem 0;
+		color: rgba(255,255,255,.8);
+	}
+	:global(#content.text ol) {
+		display: block;
+		list-style-type: decimal;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		padding-inline-start: 3rem;
+		color: rgba(255,255,255,.85);
+	}
   .product-featured-image {
     max-width: 1400px;
     margin: 0 auto;
   }
   section.container {
-    padding-top: 4vh;
+    padding-top: 0;
   }
   .product-feature {
     align-items: center;
@@ -133,7 +173,10 @@
     flex-direction: column;
   }
   @media (min-width: 720px) {
-		#heading h1 {
+		#heading.header-normal .container {
+			padding-bottom: 4rem;
+		}
+		#heading.header-full h1 {
 	    font-size: 5rem;
 		}
     #heading p {
