@@ -46,6 +46,7 @@
 		downloadField = insights_entry.fields.download;
 	}
 	let visible = false;
+	
 	onMount(() => {
 		setTimeout(() => {
 			visible = true;

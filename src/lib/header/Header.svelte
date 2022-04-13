@@ -288,15 +288,11 @@
 	.links > li > a {
 		padding-left: 8px;
 		line-height: 1.2;
+		position: relative;
 	}
 	.links > li > a span {
 		opacity: .9;
 		font-size: 18px;
-		margin-left: -2px;
-    margin-bottom: -1px;
-	}
-	.links > li > a span:before {
-		vertical-align: bottom;
 	}
 	.dropdown {
 		position: absolute;
@@ -342,6 +338,14 @@
 		}
 		ul.links {
 			display: flex;
+		}
+		li.sub-menu {
+			padding-right: 18px;
+		}
+		li.sub-menu a > span {
+			position: absolute;
+			top: 1px;
+			right: -20px;
 		}
 	}
 	@media (max-width:720px) {
