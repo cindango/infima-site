@@ -10,6 +10,10 @@
 	export let document;
 </script>
 
+<svelte:head>
+	<title>{document.data.title[0].text} | Infima</title>
+</svelte:head>
+
 <section id="heading" class={document.data.header_image.url ? "header-full" : "header-normal"} style={document.data.header_image.url ? "background-image: url(" + document.data.header_image.url + ")" : ""}>
 	{#if document.data.header_image.url}
 		<div id="gradient" />

@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>About Us | Infima</title>
 </svelte:head>
 
 {#await prismicQuery}

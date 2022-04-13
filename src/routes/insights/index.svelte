@@ -12,6 +12,10 @@
   }
 </script>
 
+<svelte:head>
+	<title>Insights | Infima</title>
+</svelte:head>
+
 <script>
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';

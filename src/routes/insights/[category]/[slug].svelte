@@ -74,6 +74,7 @@
 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
 <![endif]-->
 <script defer src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<title>{insights_entry.fields.title} | Infima</title>
 </svelte:head>
 
 <section class="container insights-detail">

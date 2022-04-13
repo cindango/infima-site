@@ -22,6 +22,10 @@
     }
 </script>
 
+<svelte:head>
+	<title>{news_entry.fields.title} | Infima</title>
+</svelte:head>
+
 <script>
 	export let news_entry;
 	import { onMount } from 'svelte';

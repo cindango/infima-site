@@ -19,6 +19,10 @@
 
 </script>
 
+<svelte:head>
+	<title>News | Infima</title>
+</svelte:head>
+
 <section class="container">
 
   <div class="header flex flex-row">

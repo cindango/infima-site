@@ -21,7 +21,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>AI-based mortgage security prepayment prediction | Infima</title>
 </svelte:head>
 
 <section id="splash" style="background-image: url('{document.data.header_image.url}&q=90');">

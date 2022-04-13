@@ -18,6 +18,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Infima for {document.data.name[0].text} | Infima</title>
+</svelte:head>
+
 <section bind:this={heading} id="heading" class="{document.uid}" style="background-image: url('{document.data.header_image.url}&q=100');">
 	<div class="container">
 		<div class="md:w-3/5 lg:w-1/2">
