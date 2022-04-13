@@ -22,7 +22,7 @@
 	<div class="container get-started">
 		<div>
 			<h2>Ready to get started?</h2>
-			<a class="button primary-btn hover-pink">Talk to Us</a>
+			<a class="button primary-btn hover-pink" href="/contact">Talk to Us</a>
 		</div>
 	</div>
 	<div class="container footer-links">
@@ -69,7 +69,7 @@
 					<li><a href="/tech">Technology</a></li>
 					<li><a href="/about">Company</a></li>
 					<li><a href="/news">News</li>
-					<li><a href="/">Contact</a></li>
+					<li><a href="/contact">Contact</a></li>
 					<li><a href="https://docs.infima.io" target="_blank">Developer</a></li>
 					<li><a href="https://infima.freshteam.com/jobs" target="_blank">Careers</a></li>
 				</ul>

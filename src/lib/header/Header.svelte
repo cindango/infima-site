@@ -53,7 +53,7 @@
 		<nav>
 
 			<ul>
-				<li>
+				<li class="logo">
 					<a sveltekit:prefetch href="/">
 						<img class="i-logo" src={logo} alt="Infima" />
 					</a>
@@ -127,6 +127,12 @@
 				<li>
 					<a href="https://app.infima.io" target="_blank">
 						Sign In
+					</a>
+				</li>
+
+				<li class="contact">
+					<a class="button primary-btn" href="/contact">
+						Talk to Us
 					</a>
 				</li>
 
@@ -225,6 +231,28 @@
 		line-height: 100%;
 	}
 
+	li.logo {
+		padding-top:4px;
+		padding-bottom: 4px;
+	}
+
+	.links > li:not(.contact) {
+		padding-top:5px;
+		padding-bottom: 2px;
+	}
+
+	li.contact {
+		padding-top: 2px;
+	}
+
+	li.contact a.button.primary-btn {
+		margin: 0;
+		padding: 5px 10px 7px;
+		line-height: 1;
+		height: auto;
+		transition: background .75s ease, opacity .5s ease;
+	}
+
 	header.nav-s nav a {
 		color: rgba(255,255,255,.75);
 	}
@@ -236,7 +264,7 @@
 		font-size: 1rem;
 		letter-spacing: 0.04em;
 		text-decoration: none;
-		transition: color 0.25s linear;
+		transition: color 0.25s linear, opacity .5s ease;
 		text-transform: lowercase;
 	}
 
@@ -307,7 +335,7 @@
 			width: 7rem;
 		}
 		.inner {
-			padding: 1.5rem 2rem;
+			padding: 1.2rem 2rem;
 		}
 		.mobile-toggle {
 			display: none;

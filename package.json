@@ -31,6 +31,7 @@
     "contentful": "^9.1.18",
     "cookie": "^0.4.1",
     "prismic-dom": "^2.2.7",
-    "typemate": "^0.7.1"
+    "typemate": "^0.7.1",
+    "yarn": "^1.22.18"
   }
 }
