@@ -326,7 +326,7 @@
 		height: auto;
 	}
 
-	@media (min-width:720px) {
+	@media (min-width:820px) {
 		.i-logo {
 			width: 7rem;
 		}
@@ -348,7 +348,7 @@
 			right: -20px;
 		}
 	}
-	@media (max-width:720px) {
+	@media (max-width:820px) {
 		nav {
 			align-items: center;
 		}
