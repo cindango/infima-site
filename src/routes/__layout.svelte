@@ -7,12 +7,14 @@
 	import '@fontsource/barlow-semi-condensed/300.css';
 	import '@fontsource/barlow-semi-condensed/400.css';
 	import '@fontsource/barlow-semi-condensed/500.css';
+	import { HubSpotTracking } from '@beyonk/svelte-hubspot'
 	import logo from './../lib/header/InfimaLogo_Thin.svg';
 	import Time from "svelte-time";
 	import { goto } from '$app/navigation';
 </script>
 
 <Header />
+<HubSpotTracking hubId="8882403" />
 
 <main>
 	<slot />
