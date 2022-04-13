@@ -8,4 +8,9 @@ export let label = 'Learn More';
   position: absolute;
   bottom: 1.4rem;
 }
+@media (min-width:720px) {
+  :global(.box .button.text-btn) {
+    bottom: 2rem;
+  }
+}
 </style>

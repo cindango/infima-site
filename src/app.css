@@ -491,9 +491,6 @@ button:focus:not(:focus-visible) {
 		font-size: 1.1rem;
 		font-weight: 500;
 	}
-	.box .button.text-btn {
-    bottom: 2rem;
-  }
   .button.text-btn {
     font-size: .9rem;
   }
