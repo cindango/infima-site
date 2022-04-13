@@ -13,13 +13,13 @@
 	import { navigating, page } from '$app/stores';
 	import { goto } from '$app/navigation';
 
-	$: if($navigating) track();
+	$: if($page) track();
 
 	function track() {
 		// Track a new page using setPath:
 		// Update the path stored in the tracker:
 		var _hsq = window._hsq = window._hsq || [];
-		_hsq.push(['setPath', $navigating.to.pathname]);
+		_hsq.push(['setPath', $page.url.pathname]);
 		// Track the page view for the new page
 		_hsq.push(['trackPageView']);
 	}
