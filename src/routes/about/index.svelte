@@ -60,7 +60,7 @@
 					  <label class="modal-box w-11/12 max-w-5xl rounded-sm relative p-6 sm:p-10" for="">
 							<label for="{person.name[0].text.replace(/ /g,'_')}" class="close text-black bg-transparent border-0 absolute right-2 top-2"><a>✕</a></label>
 							<div class="flex flex-row gap-4 sm:gap-8 items-start">
-								<div class="headshot hidden sm:block flex-none w-1/5">
+								<div class="headshot popup hidden sm:block flex-none w-1/5">
 									<img src="{person.headshot.url}" />
 								</div>
 								<div class="profile w-full sm:w-4/5">
@@ -172,8 +172,11 @@
 	}
 
 	:global(.modal .bio p) {
-		color: #000;
+		color: rgba(0,0,0,1);
 		margin: 1rem 0;
+		font-weight: 400;
+		letter-spacing: .02rem;
+		font-family: var(--font-condensed);
 	}
 
   .info p {
@@ -189,7 +192,7 @@
 		transition: box-shadow .5s ease, background .5s ease;
   }
 
-	.headshot:hover {
+	.headshot:not(.popup):hover {
 		box-shadow: 7px 7px 20px rgba(236,117,255,.2);
 		background: #ebdaff;
 	}
