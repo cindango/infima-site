@@ -136,7 +136,7 @@
 	</div>
 	{#await news}
 	{:then news}
-		<div class="flex flex-col w-full divide-y" in:fade>
+		<div class="news-list flex flex-col w-full divide-y" in:fade>
 			{#each news.items.slice(0, 5) as news, i}
 				<InsightsRow post={news} category={news.fields.category} type={news.sys.contentType.sys.id} />
 			{/each}
@@ -203,6 +203,13 @@
 	}
 	.callout a {
 		width: fit-content;
+	}
+	:global(.news-list:hover a span) {
+		opacity: .5;
+		transition: opacity .5s ease;
+	}
+	:global(.news-list:hover a.insights-row) {
+		border-color: rgba(255,255,255,.1);
 	}
 	@media (min-width: 720px) {
 		:global(#splash h1) {
