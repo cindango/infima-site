@@ -16,7 +16,7 @@
 	});
 </script>
 
-<a bind:this={insight} class="insights-row flex flex-col sm:flex-row pt-8 pb-10 sm:pt-4 sm:pb-5 items-start gap-4 px-4" href="/{type}/{type === 'insights' ? category + '/' : ''}{post.fields.slug}">
+<a bind:this={insight} class="insights-row flex flex-col sm:flex-row pt-8 pb-10 sm:pt-4 sm:pb-5 items-start gap-4" href="/{type}/{type === 'insights' ? category + '/' : ''}{post.fields.slug}">
   <span class="meow w-auto border-b sm:border-b-0 sm:w-1/6">
     {#if post.fields.category}
       {post.fields.category.replace(/-/g, ' ')}
