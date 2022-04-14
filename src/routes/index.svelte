@@ -9,15 +9,23 @@
 	import TextButton from './../lib/buttons/TextButton.svelte';
 	import RequestDemo from './../lib/buttons/RequestDemo.svelte';
 	import InsightsItem from './../lib/content/InsightsItem.svelte';
+	import InsightsRow from './../lib/content/InsightsRow.svelte';
 	import Button from './../lib/buttons/Button.svelte';
 	export let document;
 
 	const getInsights = async () => {
-      var response = await fetch('https://cdn.contentful.com/spaces/os6xljkhzssb/environments/master/entries?access_token=4vOkJVsrvDHzcvRYEt7ID9rEiKR0Zi44rirbvVDnbrE&sys.contentType.sys.id%5Bin%5D=insights,news');
+      var response = await fetch('https://cdn.contentful.com/spaces/os6xljkhzssb/environments/master/entries?access_token=4vOkJVsrvDHzcvRYEt7ID9rEiKR0Zi44rirbvVDnbrE&sys.contentType.sys.id%5Bin%5D=insights&order=-sys.createdAt');
       var data = await response.json();
       return data;
   }
-  let promise = getInsights();
+  let insights = getInsights();
+
+	const getNews = async () => {
+      var response = await fetch('https://cdn.contentful.com/spaces/os6xljkhzssb/environments/master/entries?access_token=4vOkJVsrvDHzcvRYEt7ID9rEiKR0Zi44rirbvVDnbrE&sys.contentType.sys.id%5Bin%5D=news&order=-sys.createdAt');
+      var data = await response.json();
+      return data;
+  }
+  let news = getNews();
 </script>
 
 <svelte:head>
@@ -106,9 +114,9 @@
 
 <section class="container">
 	<div class="section-head">
-		<label><h2>News + Insights</h2></label>
+		<label><h2>Insights</h2></label>
 	</div>
-	{#await promise}
+	{#await insights}
 	{:then insights}
 		<div class="grid lg:grid-cols-3 gap-8 w-full" in:fade>
 			{#each insights.items as insight}
@@ -118,7 +126,23 @@
 			{/each}
 		</div>
 	{:catch err}
-		<h2>Error while loading the data</h2>
+		<em>Error while loading insights.</em>
+	{/await}
+</section>
+
+<section class="container">
+	<div class="section-head">
+		<label><h2>News</h2></label>
+	</div>
+	{#await news}
+	{:then news}
+		<div class="flex flex-col w-full divide-y" in:fade>
+			{#each news.items.slice(0, 5) as news, i}
+				<InsightsRow post={news} category={news.fields.category} type={news.sys.contentType.sys.id} />
+			{/each}
+		</div>
+	{:catch err}
+		<em>Error while loading news.</em>
 	{/await}
 </section>
 
