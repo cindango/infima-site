@@ -194,7 +194,7 @@
 
 	.headshot:not(.popup):hover {
 		box-shadow: 7px 7px 20px rgba(236,117,255,.2);
-		background: #ebdaff;
+		background: #d8cfff;
 	}
 
   .headshot img {
@@ -202,7 +202,7 @@
     height: auto;
     filter: grayscale(1);
     border-radius: 3px;
-		mix-blend-mode: multiply;
+		mix-blend-mode: luminosity;
   }
 
 	@media (min-width: 720px) {
