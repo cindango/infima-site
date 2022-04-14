@@ -55,9 +55,9 @@
             </div>
           </div>
 
-					<input type="checkbox" id="{person.name[0].text.replace(/ /g,'_')}" class="modal-toggle">
-					<label for="{person.name[0].text.replace(/ /g,'_')}" class="modal cursor-pointer">
-					  <label class="modal-box w-11/12 max-w-5xl rounded-sm relative p-6 sm:p-10" for="">
+					<input type="checkbox" id="{person.name[0].text.replace(/ /g,'_')}" class="daisy-modal-toggle">
+					<label for="{person.name[0].text.replace(/ /g,'_')}" class="daisy-modal">
+					  <label class="daisy-modal-box w-11/12 max-w-5xl rounded-sm relative p-6 sm:p-10" for="">
 							<label for="{person.name[0].text.replace(/ /g,'_')}" class="close text-black bg-transparent border-0 absolute right-2 top-2"><a>✕</a></label>
 							<div class="flex flex-row gap-4 sm:gap-8 items-start">
 								<div class="headshot popup hidden sm:block flex-none w-1/5">
@@ -147,7 +147,7 @@
     line-height: 1.2;
   }
 
-	.modal .close a {
+	.daisy-modal .close a {
 		text-decoration: none;
 		color: #000;
 		font-size: 2rem;
@@ -156,22 +156,22 @@
 		transition: opacity .5s ease;
 	}
 
-	.modal .close a:hover {
+	.daisy-modal .close a:hover {
 		opacity: 1;
 	}
 
-	.modal h3,
-	.modal .profile span {
+	.daisy-modal h3,
+	.daisy-modal .profile span {
     color: #000;
 		font-weight: 400;
 		font-family: var(--font-condensed);
   }
 
-	.modal .headshot img {
+	.daisy-modal .headshot img {
 		width: 100%;
 	}
 
-	:global(.modal .bio p) {
+	:global(.daisy-modal .bio p) {
 		color: rgba(0,0,0,1);
 		margin: 1rem 0;
 		font-weight: 400;
