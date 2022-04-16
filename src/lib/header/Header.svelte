@@ -58,7 +58,7 @@
 
 				<li class="sub-menu products" class:open="{products}" on:mouseenter={openProducts} on:mouseleave={closeNav}>
 
-					<a>Products <span class="icon-expand_more"></span></a>
+					<span class="top-level">Products <span class="icon-expand_more"></span></span>
 
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
@@ -78,7 +78,7 @@
 
 				<li class="sub-menu solutions" class:open="{solutions}" on:mouseenter={openSolutions} on:mouseleave={closeNav}>
 
-					<a>Solutions <span class="icon-expand_more"></span></a>
+					<span class="top-level">Solutions <span class="icon-expand_more"></span></span>
 
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
@@ -103,7 +103,7 @@
 
 				<li class="sub-menu solutions" class:open="{about}" on:mouseenter={openAbout} on:mouseleave={closeNav}>
 
-					<a>More <span class="icon-expand_more"></span></a>
+					<span class="top-level">More <span class="icon-expand_more"></span></span>
 
 						<div class="dropdown" on:click={closeNav}>
 							<ul>
@@ -133,10 +133,12 @@
 			</ul>
 
 			<ul class="mobile-toggle">
-				<button on:click={() => show_mobile_nav = !show_mobile_nav}>
-					<span class:close={show_mobile_nav} />
-					<span class:close={show_mobile_nav} />
-				</button>
+				<li>
+					<button aria-label="Mobile Menu" on:click={() => show_mobile_nav = !show_mobile_nav}>
+						<span class:close={show_mobile_nav} />
+						<span class:close={show_mobile_nav} />
+					</button>
+				</li>
 			</ul>
 
 		</nav>
@@ -215,7 +217,7 @@
 
 	ul.links {
 		display: none;
-    justify-content: end;
+    justify-content: flex-end;
     gap: 30px;
 	}
 
@@ -249,7 +251,7 @@
 		color: rgba(255,255,255,.75);
 	}
 
-	nav a {
+	nav a, nav .top-level {
 		height: 100%;
 		color: rgba(255,255,255,.9);
 		font-weight: 400;
@@ -258,17 +260,19 @@
 		text-decoration: none;
 		transition: color 0.25s linear, opacity .5s ease;
 		text-transform: lowercase;
+		cursor: pointer;
 	}
 
-	nav li:hover > a,
-	header.expanded:hover nav li.open > a,
+	nav li:hover > .top-level,
+	header.expanded:hover nav li.open > .top-level,
 	header.expanded:hover nav li.open .dropdown a,
-	header.expanded:hover nav ul > li > a:hover {
+	header.expanded:hover nav ul > li > .top-level:hover {
 		opacity: 1;
 		color: rgba(255,255,255,1);
 	}
 
-	header.expanded:hover nav ul > li > a {
+	header.expanded:hover nav ul > li > a,
+	header.expanded:hover nav ul > li > .top-level {
 		opacity: .5;
 	}
 
@@ -277,12 +281,13 @@
 		min-height: 24px;
 		transition: height .25s ease;
 	}
-	.links > li > a {
+	.links > li > a,
+	.links > li > .top-level {
 		padding-left: 8px;
 		line-height: 1.2;
 		position: relative;
 	}
-	.links > li > a span {
+	.links > li > .top-level span {
 		opacity: .9;
 		font-size: 18px;
 	}
@@ -331,7 +336,7 @@
 		li.sub-menu {
 			padding-right: 18px;
 		}
-		li.sub-menu a > span {
+		li.sub-menu .top-level > span {
 			position: absolute;
 			top: 1px;
 			right: -20px;
