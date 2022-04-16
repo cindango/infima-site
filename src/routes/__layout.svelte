@@ -8,7 +8,7 @@
 	import '@fontsource/barlow-semi-condensed/400.css';
 	import '@fontsource/barlow-semi-condensed/500.css';
 	import { onMount } from 'svelte';
-	import logo from './../lib/header/InfimaLogo_Thin.svg';
+	import Logo from './../lib/header/Logo.svelte';
 	import Time from "svelte-time";
 	import { navigating, page } from '$app/stores';
 	import { goto } from '$app/navigation';
@@ -41,7 +41,7 @@
 	<div class="container footer-links">
 		<div class="grid sm:grid-cols-4 w-full gap-8">
 			<div class="info">
-				<strong><img class="i-logo" src={logo} alt="Infima" /></strong>
+				<strong><Logo /></strong>
 				<ul>
 					<li>One Franklin Parkway, Bldg 930</li>
 					<li>San Mateo, CA 94403</li>
@@ -118,12 +118,12 @@
 		text-transform: lowercase;
 	}
 
-	footer .container {
+	.container {
 		padding-top: 4rem;
 		padding-bottom: 4rem;
 	}
 
-	footer strong {
+	strong {
 		border-top: 1px solid rgba(255,255,255,.2);
 		padding-top: .5rem;
 		display: block;
@@ -133,11 +133,15 @@
 		letter-spacing: .03rem;
 	}
 
-	footer .footer-links {
+	.info strong {
+		padding-top: 1rem;
+	}
+
+	.footer-links {
 		gap: 8vh;
 	}
 
-	footer .info {
+	.info {
 		display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -145,39 +149,39 @@
 		color: rgba(255,255,255,.8);
 	}
 
-	footer .info li img {
+	.info li img {
 		width: 20px;
 		margin-top: .5rem;
 		opacity: .8;
 		transition: opacity .5s ease;
 	}
 
-	footer .info li img:hover {
+	.info li img:hover {
 		opacity: 1;
 	}
 
-	footer .info .i-logo {
+	.info .i-logo {
 		width: 90px;
 		padding: 1rem 0;
 	}
 
-	footer li {
+	li {
 		font-size: 1rem;
 		padding: .2rem 0;
 		letter-spacing: .03rem;
 		font-weight: 300;
 	}
 
-	footer a {
+	a {
 		color: rgba(255,255,255,.8);
 		text-decoration: none;
 	}
 
-	footer a:hover {
+	a:hover {
 		color: rgba(255,255,255,1);
 	}
 
-	footer .copywright {
+	.copywright {
 		text-transform: initial;
 		font-size: .9rem;
 		border-top: 1px solid rgba(255,255,255,.2);
@@ -193,10 +197,10 @@
 	}
 
 	@media (min-width: 720px) {
-		footer .container {
+		.container {
 			padding: 8vh 2rem;
 		}
-		footer .info .i-logo {
+		.info .i-logo {
 			width: 113px;
 		}
 	}
