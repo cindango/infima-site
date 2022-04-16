@@ -1,5 +1,9 @@
 <script context="module">
 	export const prerender = true;
+	import createClient from '$lib/prismic';
+
+	const client = createClient()
+  const prismicQuery = client.getSingle('about', 'about');
 </script>
 
 <script>
@@ -13,90 +17,99 @@
 	<title> About Us | Infima</title>
 </svelte:head>
 
-<section id="heading" class="container">
-	<div class="flex flex-col gap-4">
-		<div class="lg:w-2/3">{@html prismicH.asHTML(document.data.heading)}</div>
-		<p class="lg:w-3/4">{@html prismicH.asText(document.data.intro)}</p>
-	</div>
-</section>
+{#await prismicQuery}
+  <div id="loading"></div>
+{:then document}
+
+	<section id="heading" class="container">
+		<div class="flex flex-col gap-4">
+			<div class="lg:w-2/3">{@html prismicH.asHTML(document.data.heading)}</div>
+			<span class="lg:w-3/4">{@html prismicH.asHTML(document.data.intro)}</span>
+		</div>
+	</section>
 
 
-{#each document.data.body as slice}
+	{#each document.data.body as slice}
 
-  {#if slice.slice_type === "team"}
-    <section class="container team">
+	  {#if slice.slice_type === "team"}
+	    <section class="container team">
 
-			{#if slice.primary.title.length > 0}
-				<div class="section-head">
-					<label>{@html prismicH.asHTML(slice.primary.title)}</label>
-				</div>
-			{/if}
+				{#if slice.primary.title.length > 0}
+					<div class="section-head">
+						<label>{@html prismicH.asHTML(slice.primary.title)}</label>
+					</div>
+				{/if}
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-y-8">
+	      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-y-8">
 
-        {#each slice.items as person}
+	        {#each slice.items as person}
 
-        <div class="flex flex-row gap-4 person items-start">
-          <div class="headshot flex-none">
-            <label for="{person.name[0].text.replace(/ /g,'_')}" class="modal-button">
-							<img src="{person.headshot.url}" />
-						</label>
-          </div>
-          <div class="info">
-            <strong><label for="{person.name[0].text.replace(/ /g,'_')}" class="modal-button">{person.name[0].text}</label></strong>
-            <p>{person.title}</p>
-          </div>
-        </div>
-
-				<input type="checkbox" id="{person.name[0].text.replace(/ /g,'_')}" class="daisy-modal-toggle">
-				<label for="{person.name[0].text.replace(/ /g,'_')}" class="daisy-modal">
-				  <label class="daisy-modal-box w-11/12 max-w-5xl rounded-sm relative p-6 sm:p-10" for="">
-						<label for="{person.name[0].text.replace(/ /g,'_')}" class="close text-black bg-transparent border-0 absolute right-2 top-2"><a>✕</a></label>
-						<div class="flex flex-row gap-4 sm:gap-8 items-start">
-							<div class="headshot popup hidden sm:block flex-none w-1/5">
+	        <div class="flex flex-row gap-4 person items-start">
+	          <div class="headshot flex-none">
+	            <label for="{person.name[0].text.replace(/ /g,'_')}" class="modal-button">
 								<img src="{person.headshot.url}" />
-							</div>
-							<div class="profile w-full sm:w-4/5">
-								<h3>{person.name[0].text}</h3>
-								<span>{person.title}</span>
-								<div class="bio w-full md:w-11/12">
-									{@html prismicH.asHTML(person.bio)}
+							</label>
+	          </div>
+	          <div class="info">
+	            <strong><label for="{person.name[0].text.replace(/ /g,'_')}" class="modal-button">{person.name[0].text}</label></strong>
+	            <p>{person.title}</p>
+	          </div>
+	        </div>
+
+					<input type="checkbox" id="{person.name[0].text.replace(/ /g,'_')}" class="daisy-modal-toggle">
+					<label for="{person.name[0].text.replace(/ /g,'_')}" class="daisy-modal">
+					  <label class="daisy-modal-box w-11/12 max-w-5xl rounded-sm relative p-6 sm:p-10" for="">
+							<label for="{person.name[0].text.replace(/ /g,'_')}" class="close text-black bg-transparent border-0 absolute right-2 top-2"><a>✕</a></label>
+							<div class="flex flex-row gap-4 sm:gap-8 items-start">
+								<div class="headshot popup hidden sm:block flex-none w-1/5">
+									<img src="{person.headshot.url}" />
+								</div>
+								<div class="profile w-full sm:w-4/5">
+									<h3>{person.name[0].text}</h3>
+									<span>{person.title}</span>
+									<div class="bio w-full md:w-11/12">
+										{@html prismicH.asHTML(person.bio)}
+									</div>
 								</div>
 							</div>
-						</div>
-				  </label>
-				</label>
+					  </label>
+					</label>
 
-        {/each}
+	        {/each}
 
-      </div>
+	      </div>
 
-    </section>
-  {/if}
+	    </section>
+	  {/if}
 
-  {#if slice.slice_type === "logos"}
+	  {#if slice.slice_type === "logos"}
 
-    <section class="container investors">
+	    <section class="container investors">
 
-      <div class="section-head">
-        <label>{@html prismicH.asHTML(slice.primary.title)}</label>
-      </div>
+	      <div class="section-head">
+	        <label>{@html prismicH.asHTML(slice.primary.title)}</label>
+	      </div>
 
-      <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+	      <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
 
-        {#each slice.items as investor}
+	        {#each slice.items as investor}
 
-          <img src="{investor.logo.url}" />
+	          <img src="{investor.logo.url}" />
 
-        {/each}
+	        {/each}
 
-      </div>
+	      </div>
 
-    </section>
+	    </section>
 
-  {/if}
+	  {/if}
 
-{/each}
+	{/each}
+
+	{:catch error}
+  <p>Something went wrong:</p>
+  <pre>{error.message}</pre>
+{/await}
 
 <style>
 	#loading {

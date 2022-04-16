@@ -4,6 +4,15 @@ import adapter from '@sveltejs/adapter-auto';
 const config = {
 	kit: {
 		adapter: adapter(),
+		vite: {
+				build: {
+						rollupOptions: {
+								output: {
+										manualChunks: undefined
+								}
+						}
+				}
+		},
 
 		// Override http methods in the Todo forms
 		methodOverride: {
