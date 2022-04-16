@@ -46,22 +46,20 @@
 		downloadField = insights_entry.fields.download;
 	}
 	let visible = false;
-	
+
 	onMount(() => {
-		setTimeout(() => {
-			visible = true;
-			hbspt.forms.create({
-				region: "na1",
-				portalId: "8882403",
-				formId: "39051910-1e1c-44d0-9e0f-44a12857f6ab",
-				target: "#request",
-				onFormSubmitted: function($form) {
-					if (downloadAllow === true && downloadField !== null) {
-						window.open(insights_entry.fields.download.fields.file.url, '_blank');
-					}
-	      }
-			});
-	  }, 300);
+		visible = true;
+		hbspt.forms.create({
+			region: "na1",
+			portalId: "8882403",
+			formId: "39051910-1e1c-44d0-9e0f-44a12857f6ab",
+			target: "#request",
+			onFormSubmitted: function($form) {
+				if (downloadAllow === true && downloadField !== null) {
+					window.open(insights_entry.fields.download.fields.file.url, '_blank');
+				}
+      }
+		});
 	});
 	$: outerWidth = 0;
 	$: innerWidth = 0;
@@ -70,11 +68,6 @@
 <svelte:window bind:innerWidth bind:outerWidth />
 
 <svelte:head>
-<script async charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-<!--[if lte IE 8]>
-<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-<![endif]-->
-<script defer src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 <title>{insights_entry.fields.title} | Infima</title>
 </svelte:head>
 

@@ -8,25 +8,18 @@
 
 	let visible = false;
 	onMount(() => {
-		setTimeout(() => {
-			visible = true;
-			hbspt.forms.create({
-				region: "na1",
-				portalId: "8882403",
-				formId: "6534a80c-bb94-423b-a03a-2c610139c674",
-				target: "#request"
-			});
-	  }, 300);
+		visible = true;
+		hbspt.forms.create({
+			region: "na1",
+			portalId: "8882403",
+			formId: "6534a80c-bb94-423b-a03a-2c610139c674",
+			target: "#request"
+		});
 	});
 </script>
 
 <svelte:head>
 	<title>Contact Us | Infima</title>
-	<script async charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-	<!--[if lte IE 8]>
-	<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-	<![endif]-->
-	<script defer src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 </svelte:head>
 
 <section id="heading" class="container">
