@@ -1,12 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
-	import logo from './InfimaLogo_Thin.svg';
 	import MobileNav from './MobileNav.svelte';
 	import { browser } from '$app/env';
+	import Logo from './Logo.svelte';
 
 	let y;
-	let loaded = false;
 	let show_mobile_nav = false;
 
 	let navState = '';
@@ -16,10 +15,6 @@
 	let about = false;
 
 	$: if (browser) document.querySelector('body > div').classList.toggle('no-scroll', show_mobile_nav);
-
-	onMount(() => {
-		loaded = true;
-	});
 
 	function openProducts(e) {
 		navState = 'expanded';
@@ -45,17 +40,16 @@
 
 </script>
 
-<svelte:window bind:scrollY={y}/>
+<svelte:window bind:scrollY={y} />
 
 <header class={y > 50 ? "nav-s" : ""} class:expanded="{navState === 'expanded'}" class:mobile-open={show_mobile_nav}>
 	<div class="inner">
-	{#if loaded}
 		<nav>
 
 			<ul>
 				<li class="logo">
 					<a sveltekit:prefetch href="/">
-						<img class="i-logo" src={logo} alt="Infima" />
+						<Logo />
 					</a>
 				</li>
 			</ul>
@@ -146,7 +140,6 @@
 			</ul>
 
 		</nav>
-	{/if}
 	</div>
 </header>
 
@@ -202,12 +195,11 @@
 		transition: background-color 1s ease, backdrop-filter 1s ease, box-shadow .5s ease;
 		box-shadow: 0 0 20px black;
 	}
-	.i-logo {
+	.logo {
 		opacity: 1;
 		transition: opacity .5s ease;
-		width: 6rem;
 	}
-	header.nav-s .i-logo {
+	header.nav-s .logo {
 		opacity: .8;
 	}
 	.inner {
@@ -327,9 +319,6 @@
 	}
 
 	@media (min-width:820px) {
-		.i-logo {
-			width: 7rem;
-		}
 		.inner {
 			padding: 1.2rem 2rem;
 		}
