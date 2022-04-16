@@ -149,7 +149,7 @@
 
 <style>
 	.mobile-toggle {
-		display: block;
+		display: flex;
 		height: 26px;
 	}
 	.mobile-toggle button {
