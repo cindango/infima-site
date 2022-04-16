@@ -1,6 +1,5 @@
 <script context="module">
 	export const prerender = true;
-	import PrismicDom from 'prismic-dom';
   import RequestDemo from './../../lib/buttons/RequestDemo.svelte';
 </script>
 
@@ -28,7 +27,7 @@
     <div class="md:w-3/5 lg:w-1/2">
       <img class="icon" src="{document.data.icon.url}">
       {@html prismicH.asHTML(document.data.name)}
-      <p>{@html PrismicDom.RichText.asHtml(document.data.short_description)}</p>
+      <p>{@html prismicH.asHTML(document.data.short_description)}</p>
       <RequestDemo />
     </div>
   </div>
@@ -56,7 +55,7 @@
               <div class="lg:w-1/3">
                 <h4>{product.title}</h4>
                 {#if product.description[0].text}
-                  {@html PrismicDom.RichText.asHtml(product.description)}
+                  {@html prismicH.asHTML(product.description)}
                 {/if}
 								{#if product.link.url}
 									<a href="{product.link.url}" class="button text-btn">
@@ -82,7 +81,7 @@
           {#each slice.items as features}
             <div class="feature md:border-r">
               <h4 class="w-4/5">{features.title}</h4>
-              <p>{@html PrismicDom.RichText.asHtml(features.description)}</p>
+              <p>{@html prismicH.asHTML(features.description)}</p>
             </div>
           {/each}
         </div>

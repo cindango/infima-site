@@ -5,7 +5,6 @@
 <script>
 	import { onMount } from "svelte";
 	import * as prismicH from '@prismicio/helpers';
-  import PrismicDom from 'prismic-dom';
 
 	export let document;
 </script>
@@ -17,7 +16,7 @@
 <section id="heading" class="container">
 	<div class="flex flex-col gap-4">
 		<div class="lg:w-2/3">{@html prismicH.asHTML(document.data.heading)}</div>
-		<span class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(document.data.intro)}</span>
+		<p class="lg:w-3/4">{@html prismicH.asText(document.data.intro)}</p>
 	</div>
 </section>
 

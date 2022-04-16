@@ -1,6 +1,5 @@
 <script context="module">
 	export const prerender = true;
-	import PrismicDom from 'prismic-dom';
 </script>
 
 <script>
@@ -26,7 +25,7 @@
 	<div class="container">
 		<div class="md:w-3/5 lg:w-1/2">
 			<h1>Infima for {document.data.name[0].text}</h1>
-			<p>{@html PrismicDom.RichText.asHtml(document.data.short_description)}</p>
+			<p>{@html prismicH.asHTML(document.data.short_description)}</p>
 			{#if document.data.related_product}
 				<Button href="/{document.data.related_product.type}s/{document.data.related_product.uid}" label="Explore {document.data.related_product.data.name[0].text}" />
 			{/if}
@@ -45,7 +44,7 @@
 			{#each slice.items as features}
 				<div class="feature md:border-r">
 					<h4 class="w-4/5">{features.title}</h4>
-					<p class="lg:pr-16">{@html PrismicDom.RichText.asHtml(features.description)}</p>
+					<p class="lg:pr-16">{@html prismicH.asHTML(features.description)}</p>
 				</div>
 			{/each}
 		</div>

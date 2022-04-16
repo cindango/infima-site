@@ -1,6 +1,5 @@
 <script context="module">
 	export const prerender = true;
-	import PrismicDom from 'prismic-dom';
 </script>
 
 <script>
@@ -30,7 +29,7 @@
 
 {#if document.data.content}
 	<section id="content" class="container text {document.uid}">
-		{@html PrismicDom.RichText.asHtml(document.data.content)}
+		{@html prismicH.asHTML(document.data.content)}
 	</section>
 {/if}
 
@@ -48,7 +47,7 @@
 	          <div class="product-feature lg:flex flex-col lg:flex-row lg:grid-cols-2 gap-16 lg:w-full xl:w-5/6">
 	            <div class="lg:w-2/5">
 	              <h4>{product.title}</h4>
-	              {@html PrismicDom.RichText.asHtml(product.description)}
+	              {@html prismicH.asHTML(product.description)}
 								{#if product.link.url}<a href="{product.link.url}" class="button text-btn">{product.link_text} <span class="icon-chevron_right"></span></a>{/if}
 	            </div>
 	            <img class="lg:w-3/5 pt-10 lg:pt-0 product-image" src="{product.image.url}&q=100" />

@@ -114,11 +114,6 @@
     "@prismicio/helpers" "^2.1.1"
     "@prismicio/types" "^0.1.24"
 
-"@prismicio/helpers@^1.0.4":
-  "integrity" "sha512-YsOfGgauGeTC5Co8zXvz278Lc/V3fyNaAPTs/y4gGrLmLhYa/eT7+USYvDB9RhKEPhYFnUqBiGWa+3l7BksYOQ=="
-  "resolved" "https://registry.npmjs.org/@prismicio/helpers/-/helpers-1.2.0.tgz"
-  "version" "1.2.0"
-
 "@prismicio/helpers@^2.1.1", "@prismicio/helpers@^2.2.1":
   "integrity" "sha512-WFfS5CpPJ1PTNU/cqx3XnO8mnbfI8bEgAnWqD57IS5Pqy8YcK8oW5VSR7nw2wPowJjWTuf8j59YtE5uiHi6aCQ=="
   "resolved" "https://registry.npmjs.org/@prismicio/helpers/-/helpers-2.2.1.tgz"
@@ -128,11 +123,6 @@
     "@prismicio/types" "^0.1.27"
     "escape-html" "^1.0.3"
     "imgix-url-builder" "^0.0.3"
-
-"@prismicio/richtext@^1.1.0":
-  "integrity" "sha512-925JuFiZiIkwu9jmlR9O/U8xCSZk/Y6BQDXKpavoVsKo+n90ml1hGdtWkglIupX+ITQO1ZINyDgUgiY1oG9dsA=="
-  "resolved" "https://registry.npmjs.org/@prismicio/richtext/-/richtext-1.1.0.tgz"
-  "version" "1.1.0"
 
 "@prismicio/richtext@^2.0.1":
   "integrity" "sha512-sM+eusvE4PsKnwefDRd0ai3Ny59XJ54dn6xfwq0Fyqj0LAcuyB2gRjSufbIqYOZ1r4JKMQArDKrypNEcrbBFkA=="
@@ -550,7 +540,7 @@
   "resolved" "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz"
   "version" "3.1.1"
 
-"escape-html@^1.0.3", "escape-html@1.0.3":
+"escape-html@^1.0.3":
   "integrity" "sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg="
   "resolved" "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz"
   "version" "1.0.3"
@@ -931,15 +921,6 @@
     "nanoid" "^3.3.1"
     "picocolors" "^1.0.0"
     "source-map-js" "^1.0.2"
-
-"prismic-dom@^2.2.7":
-  "integrity" "sha512-4rJWzBqq/6h15giAzB6L8+eaWLQJrQcM4EAicmtw3mI8DhussbJOgheTeFtTCgvO7e5QEjZA0he5gEbQYfKGmg=="
-  "resolved" "https://registry.npmjs.org/prismic-dom/-/prismic-dom-2.2.7.tgz"
-  "version" "2.2.7"
-  dependencies:
-    "@prismicio/helpers" "^1.0.4"
-    "@prismicio/richtext" "^1.1.0"
-    "escape-html" "1.0.3"
 
 "qs@^6.9.4":
   "integrity" "sha512-wr7M2E0OFRfIfJZjKGieI8lBKb7fRCH4Fv5KNPEs7gJ8jadvotdsS08PzOKR7opXhZ/Xkjtt3WF9g38drmyRqQ=="

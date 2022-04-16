@@ -32,7 +32,6 @@
     "contentful": "^9.1.18",
     "cookie": "^0.4.1",
     "daisyui": "^2.13.6",
-    "prismic-dom": "^2.2.7",
     "svelte-markdown": "^0.2.2",
     "typemate": "^0.7.1",
     "yarn": "^1.22.18"

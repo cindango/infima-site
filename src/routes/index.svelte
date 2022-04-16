@@ -5,7 +5,6 @@
 	import { onMount } from "svelte";
 	import { fade } from 'svelte/transition';
 	import * as prismicH from '@prismicio/helpers';
-	import PrismicDom from 'prismic-dom';
 	import TextButton from './../lib/buttons/TextButton.svelte';
 	import RequestDemo from './../lib/buttons/RequestDemo.svelte';
 	import InsightsItem from './../lib/content/InsightsItem.svelte';
@@ -35,7 +34,7 @@
 <section id="splash" style="background-image: url('{document.data.header_image.url}&q=90');">
 	<div class="container">
 		<div class="lg:w-2/3">{@html prismicH.asHTML(document.data.heading)}</div>
-		<p>{@html PrismicDom.RichText.asHtml(document.data.tagline)}</p>
+		<span>{@html prismicH.asHTML(document.data.tagline)}</span>
 		<RequestDemo />
 	</div>
 </section>
@@ -57,7 +56,7 @@
 					<a sveltekit:prefetch class="box" href="/{product.link.type}s/{product.link.uid}">
 						<img class="icon" src="{product.icon.url}" width="51.2" height="40" alt="{product.icon.alt}" />
 						<h4>{product.name}</h4>
-						<span class="sm:w-2/3 lg:w-full">{@html PrismicDom.RichText.asHtml(product.description)}</span>
+						<span class="sm:w-2/3 lg:w-full">{@html prismicH.asHTML(product.description)}</span>
 						<TextButton />
 					</a>
 				{/each}
@@ -73,7 +72,7 @@
 			<div class="section-head">
 				<label>{@html prismicH.asHTML(slice.primary.title)}</label>
 				{#if slice.primary.description > 0}
-					<h3>{@html PrismicDom.RichText.asHtml(slice.primary.description)}</h3>
+					<h3>{@html prismicH.asHTML(slice.primary.description)}</h3>
 				{/if}
 			</div>
 
@@ -83,7 +82,7 @@
 					<a sveltekit:prefetch class="box solution" href="/{solution.link.type}s/{solution.link.uid}" style="background-image: url({solution.background.url}&q=95);">
 						<img class="icon" src="{solution.icon.url}" width="60" height="60" alt="{solution.icon.alt}" />
 						<h4>{solution.name}</h4>
-						<span class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(solution.description)}</span>
+						<span class="lg:w-3/4">{@html prismicH.asHTML(solution.description)}</span>
 						<TextButton />
 					</a>
 				{/each}
@@ -100,7 +99,7 @@
 
 				<div class="section-head">
 					<label>{@html prismicH.asHTML(callout.title)}</label>
-					<h3 class="lg:w-3/4">{@html PrismicDom.RichText.asHtml(callout.description)}</h3>
+					<h3 class="lg:w-3/4">{@html prismicH.asHTML(callout.description)}</h3>
 					<Button href="/{callout.link.uid}" label="{callout.link_text}" />
 				</div>
 
