@@ -243,7 +243,7 @@ select {
 	margin: 0 auto;
 }
 
-.form-consent p {
+#request .form-consent p {
 	font-size: .75rem;
 	margin: .5rem auto 0;
 	max-width: 500px;
