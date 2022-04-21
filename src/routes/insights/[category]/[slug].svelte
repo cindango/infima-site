@@ -160,6 +160,17 @@
 		margin-top: .5rem;
 		margin-bottom: 1rem;
 	}
+	:global(#request .submitted-message) {
+		max-width: 500px;
+		margin: 0 auto 2rem;
+		background: rgba(255,255,255,.05);
+		padding: 2rem;
+	}
+	:global(#request .submitted-message p strong) {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		display: block;
+	}
 	@media (min-width:720px) {
 		.insights-frame {
 			padding: 4rem;
