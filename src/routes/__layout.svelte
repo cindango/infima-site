@@ -85,7 +85,7 @@ import Time from "svelte-time";
 					<li><a href="/news">News</li>
 					<li><a rel="external" href="/contact">Contact</a></li>
 					<li><a href="https://developer.infima.io" target="_blank">Developer</a></li>
-					<li><a href="https://infima.freshteam.com/jobs" target="_blank">Careers</a></li>
+					<li><a href="https://infima-technologies.breezy.hr" target="_blank">Careers</a></li>
 				</ul>
 			</div>
 		</div>
